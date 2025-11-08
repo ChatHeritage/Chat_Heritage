@@ -1,0 +1,95 @@
+/* ================================================================
+   CHAT HERITAGE - VIDEO HERO AUTOPLAY FIX
+   Assicura che il video sia sempre in autoplay su tutti i dispositivi
+   ================================================================ */
+
+/* Forza il video a essere sempre visibile e in autoplay */
+.hero-video {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Previene che il video venga nascosto da media queries */
+@media screen and (max-width: 480px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* Landscape orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+        min-height: 100vh !important;
+    }
+}
+
+/* High DPI displays */
+@media screen and (min-resolution: 192dpi),
+       screen and (min-resolution: 2dppx) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* Reduced motion - il video continua comunque a essere riprodotto */
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* Print - nascondi solo in stampa */
+@media print {
+    .hero-video {
+        display: none !important;
+    }
+}
+
+/* IE11 fallback - mantieni il video */
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .hero-video {
+        display: block !important;
+    }
+}
+
+/* Assicura che il container del video sia sempre visibile */
+.hero-video-container {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}

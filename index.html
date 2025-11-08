@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!-- Dinamico per multilingua -->
+<html lang="it" id="html-root">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MIGLIORAMENTO 1: Resource Hints Ottimizzati -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+		<link rel="dns-prefetch" href="//flagsapi.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<!-- MIGLIORAMENTO 2: Preload Font Critici -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		
+		<!-- PRELOAD VIDEO HERO -->
+		<link rel="preload" href="./CRONOSTORIA VENEZIA/VEO3-soloprompt.mp4" as="video" type="video/mp4">
+		
+		<!-- primary meta tags -->
+		<title>Chat Heritage - Chatta con la Storia!</title>
+		<meta name="title" content="Chat Heritage Venice - Chatta con la Storia!">
+		<meta name="description" content="Scopri Venezia con Chat Heritage: tour guidati interattivi attraverso chatbot Leo. Itinerari unici tra monumenti iconici e misteri della Serenissima.">
+		<meta name="keywords" content="Venezia tour, chatbot guida turistica, itinerari Venezia, Chat Heritage, Leo chatbot, tour interattivi Venezia, guida virtuale">
+
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://cdnjs.cloudflare.com;"> -->
+		
+		<!-- MIGLIORAMENTO 3: Meta Tags SEO Avanzati -->
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<meta name="author" content="Chat Heritage">
+		<meta name="theme-color" content="#8e5edc">
+		<link rel="canonical" href="https://tuodominio.com/">
+		
+		<!-- Per indicare ai motori di ricerca le versioni alternative -->
+		<link rel="alternate" hreflang="it" href="https://tuodominio.com/it/">
+		<link rel="alternate" hreflang="en" href="https://tuodominio.com/en/">
+		<link rel="alternate" hreflang="x-default" href="https://tuodominio.com/">
+		
+		<!-- og meta tags ottimizzati -->
+		<meta property="og:title" content="Chat Heritage Venice - Tour Interattivi con AI">
+		<meta property="og:description" content="Scopri Venezia con tour guidati interattivi attraverso chatbot Leo. Itinerari unici tra monumenti iconici e misteri della Serenissima.">
+		<meta property="og:image" content="https://tuodominio.com/img/og-image.jpg">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://tuodominio.com/">
+		<meta property="og:site_name" content="Chat Heritage">
+		<meta property="og:locale" content="it_IT">
+		
+		<!-- MIGLIORAMENTO 4: Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "TouristAttraction",
+			"name": "Chat Heritage Venice",
+			"description": "Tour guidati interattivi a Venezia con chatbot AI Leo",
+			"url": "https://tuodominio.com",
+			"image": "https://tuodominio.com/img/logo.png",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Venezia",
+				"addressRegion": "Veneto",
+				"addressCountry": "IT"
+			},
+			"touristType": ["Cultural Tourist", "Technology Enthusiast"],
+			"availableLanguage": ["Italian", "English"],
+			"provider": {
+				"@type": "Organization",
+				"name": "Chat Heritage",
+				"url": "https://tuodominio.com"
+			}
+		}
+		</script>
+		
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Chat Heritage",
+			"url": "https://tuodominio.com"
+		}
+		</script>
+		
+		<!-- favicon e PWA -->
+		<link rel="shortcut icon" href="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/FAVICON_CHAT_HERITAGE.png" type="image/png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		
+		<!-- css link -->
+		<link rel="stylesheet" href="style-final.css" type="text/css" media="all">
+		<link rel="stylesheet" href="media_queries.css" type="text/css" media="all">
+		<link rel="stylesheet" href="mobile-menu.css" type="text/css" media="all">
+		<link rel="stylesheet" href="mobile-menu-fix.css" type="text/css" media="all">  <!-- AGGIUNGI QUESTO -->
+		<link rel="stylesheet" href="ottimizzazioni-accessibilita.css" type="text/css" media="all">
+		<link rel="stylesheet" href="video-hero-fix.css" type="text/css" media="all">
+		<link rel="stylesheet" href="font-unification-and-leo-centering.css" type="text/css" media="all">
+		
+        <!-- google font link fallback -->
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		</noscript>
+		
+		<!-- font awesome link -->
+		<script src="https://kit.fontawesome.com/ed4a3d9564.js" crossorigin="anonymous"></script>
+		
+		<!-- MIGLIORAMENTO 5: Service Worker Registration -->
+		<script>
+			// Service Worker per cache e offline
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register('/sw.js')
+						.then(function(registration) {
+							console.log('SW registered: ', registration);
+						})
+						.catch(function(registrationError) {
+							console.log('SW registration failed: ', registrationError);
+						});
+				});
+			}
+		</script>
+
+		<!-- MIGLIORAMENTO 6: Web Vitals Monitor Personalizzato (opzionale) -->
+		<script>
+			// Configurazione personalizzata (opzionale)
+			window.addEventListener('DOMContentLoaded', function() {
+				if (window.ChatHeritageWebVitals) {
+					// Modifica configurazione
+					window.ChatHeritageWebVitals.config.debug = false; // Disabilita debug in produzione
+					window.ChatHeritageWebVitals.config.customEndpoint = '/api/vitals'; // Il tuo endpoint
+				}
+			});
+		</script>
+		
+		<!-- Polyfills for older browsers -->
+		<script>
+			// Intersection Observer Polyfill
+			if (!('IntersectionObserver' in window)) {
+			    var script = document.createElement('script');
+			    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/intersection-observer/0.12.2/intersection-observer.js';
+			    document.head.appendChild(script);
+			}
+			
+			// CSS Grid Polyfill detection
+			if (!CSS.supports('display', 'grid')) {
+			    var link = document.createElement('link');
+			    link.rel = 'stylesheet';
+			    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/css-grid-polyfill/1.0.0/css-grid-polyfill.min.css';
+			    document.head.appendChild(link);
+			}
+			
+			// Object-fit polyfill for IE
+			if (!('objectFit' in document.documentElement.style)) {
+			    var script = document.createElement('script');
+			    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js';
+			    document.head.appendChild(script);
+			}
+		</script>
+	</head>
+	<body>
+		<!-- MIGLIORAMENTO 6: Skip Links per Accessibilità -->
+		<a href="#comefunziona" class="skip-link sr-only-focusable">Salta al contenuto principale</a>
+		<a href="#navigation" class="skip-link sr-only-focusable">Salta alla navigazione</a>
+		
+<!--------------------------------------------------------------------------- Header --------------------------------------------------------------------------->
+	
+		<header class="header" id="header" role="banner">
+			<div class="nav-container">
+				
+				<!-- ============================================
+					LOGO (rimane invariato)
+					============================================ -->
+				<a href="#" aria-label="Chat Heritage - Torna alla homepage">
+					<img src="./img/LOGO-UFFICIALE-NERO.png" alt="Logo Chat Heritage" class="logo">
+				</a>
+				
+				<!-- ============================================
+					CHECKBOX NASCOSTO per controllo menu
+					(Pure CSS - nessun JavaScript necessario)
+					============================================ -->
+				<input type="checkbox" 
+					name="mobile-menu-toggle" 
+					id="mobile-menu-toggle" 
+					aria-label="Toggle menu mobile" />
+				
+				<!-- ============================================
+					HAMBURGER ICON (3 linee)
+					Posizionato a SINISTRA del dropdown lingue
+					============================================ -->
+				<div class="hamburger-lines" aria-hidden="true">
+					<span class="line line1"></span>
+					<span class="line line2"></span>
+					<span class="line line3"></span>
+				</div>
+				
+				<!-- ============================================
+					NAVIGATION MENU
+					(rimane invariato, solo wrapper attorno)
+					============================================ -->
+				<nav role="navigation" aria-label="Navigazione principale" id="navigation">
+					<ul class="nav-menu">
+						<li><a href="#home" aria-current="page">Home</a></li>
+						<li><a href="#chisiamo">Chi Siamo</a></li>
+						<li><a href="#chièleo">Chi è Leo</a></li>
+						<li><a href="#comefunziona">Come funziona</a></li>
+						<li><a href="#gallery-title">Gallery</a></li>
+					</ul>
+				</nav>
+				
+				<!-- ============================================
+					DROPDOWN SELEZIONE LINGUA
+					(rimane invariato)
+					Posizionato a DESTRA dell'hamburger
+					============================================ -->
+				<div class="dropdown" tabindex="0">
+					<button id="dropdown-btn" 
+							aria-label="Seleziona lingua" 
+							aria-haspopup="listbox" 
+							aria-expanded="false"></button>
+					<ul class="dropdown-content" 
+						id="dropdown-content" 
+						role="listbox" 
+						aria-label="Opzioni lingua"></ul>
+				</div>
+				
+			</div>
+		</header>
+
+<!--------------------------------------------------------------------------- 1 - Hero Section with Video ------------------------------------------------------------->
+		<section class="hero" id="home" role="banner" aria-labelledby="hero-title">
+			<!-- Video Background -->
+			<div class="hero-video-container">
+				<video 
+					class="hero-video" 
+					autoplay 
+					muted 
+					loop 
+					playsinline
+					webkit-playsinline
+					preload="auto"
+					aria-hidden="true"
+					poster="./video/poster.jpg"
+					disablepictureinpicture
+					controlslist="nodownload nofullscreen noremoteplayback">
+					<source src="./CRONOSTORIA VENEZIA/VEO3-soloprompt.mp4" type="video/mp4">
+					<!-- Fallback per browser che non supportano video -->
+					<div class="hero-video-fallback"></div>
+				</video>
+				<!-- Overlay scuro per migliorare leggibilità del testo -->
+				<div class="hero-overlay"></div>
+			</div>
+			
+			<!-- Content sovrapposto al video -->
+			<div class="hero-content">
+				
+				<h1 class="hero-title" id="hero-title">Scegli. <br> Interagisci. <br> Esplora. Conosci.</h1>
+				<p class="hero-subtitle">Venezia e le sue origini. Te le raccontiamo noi attraverso itinerari unici e selezionati.</p>
+			
+				<a href="#chisiamo" class="hero-cta" role="button" aria-describedby="cta-description">
+					Scopri di più!
+				</a>
+				
+			</div>
+		</section>
+
+<!------------------------------------------------------------------------------------ 2 - Chi Siamo Section ------------------------------------------------------------------------------------>
+		<section class="about-section" id="chisiamo" aria-labelledby="about-title">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title" id="about-title">Chi Siamo</h2>
+					<p class="section-subtitle">Scopri il team e la missione dietro Chat Heritage</p>
+				</div>
+				<div class="about-content">
+					<div class="about-text">
+						<h3>La Nostra Mission</h3>
+						<p>Chat Heritage nasce dalla passione per la storia di Venezia e l'innovazione tecnologica. Il nostro obiettivo è rendere accessibile a tutti il patrimonio culturale della Serenissima attraverso tour guidati interattivi powered by AI.</p>
+						<h3>Perché Chat Heritage?</h3>
+						<ul class="feature-list">
+							<li><i class="fa-solid fa-circle-check"></i>Percorsi flessibili al tuo ritmo</li>
+							<li><i class="fa-solid fa-circle-check"></i>Contenuti storici verificati</li>
+							<li><i class="fa-solid fa-circle-check"></i>Disponibile 24/7 sul tuo smartphone</li>
+						</ul>
+					</div>
+					<div class="about-stats">
+						<div class="stat-card">
+							<div class="stat-number">10+</div>
+							<div class="stat-label">Itinerari Disponibili</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">80+</div>
+							<div class="stat-label">Luoghi da Scoprire</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">6</div>
+							<div class="stat-label">Lingue Supportate</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">24/7</div>
+							<div class="stat-label">Sempre Disponibile</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<!------------------------------------------------------------------------------------ 3 - Leo il Chatbot Section ------------------------------------------------------------------------------------>
+		<section class="leo-section" id="chièleo" aria-labelledby="leo-title">
+			<div class="container">
+				<div class="leo-content">
+					<div class="leo-image">
+						<img src="./CRONOSTORIA VENEZIA/leofullbodyvettoriale.png" alt="Leo il chatbot mascotte di Chat Heritage" loading="lazy">
+					</div>
+					<div class="leo-text">
+						<h2 class="section-title" id="leo-title">Incontra Leo, la Tua Guida Virtuale</h2>
+						<p class="leo-description">Leo è il cuore di Chat Heritage: un chatbot intelligente che ti accompagna attraverso le meraviglie di Venezia. Basato su tecnologia AI avanzata, Leo è sempre pronto a rispondere alle tue domande, raccontarti storie affascinanti e guidarti passo dopo passo.</p>
+						<div class="leo-features">
+							<div class="leo-feature-item">
+								<i class="fa-solid fa-robot"></i>
+								<div>
+									<h4>Intelligenza Artificiale</h4>
+									<p>Conversazioni naturali e risposte immediate</p>
+								</div>
+							</div>
+							<div class="leo-feature-item">
+								<i class="fa-solid fa-microphone"></i>
+								<div>
+									<h4>Guida Audio & Testo</h4>
+									<p>Scegli il formato che preferisci</p>
+								</div>
+							</div>
+							<div class="leo-feature-item">
+								<i class="fa-solid fa-map-location-dot"></i>
+								<div>
+									<h4>Navigazione Assistita</h4>
+									<p>Indicazioni precise per ogni tappa</p>
+								</div>
+							</div>
+							<div class="leo-feature-item">
+								<i class="fa-solid fa-clock"></i>
+								<div>
+									<h4>Al Tuo Ritmo</h4>
+									<p>Nessuna fretta, esplora come vuoi tu</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<!--------------------------------------------------------------------------- 4 - Main Content ------------------------------------------------------------>
+		<section class="main-content" id="comefunziona" role="main">
+			<div class="container">
+
+				<!-- First Section -->
+				<section class="content-section slide-in-left" data-animation="slide-left" aria-labelledby="step1-title">
+					<div class="image-container">
+						<div class="placeholder-image">
+							<img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/LEONE_MARKER-IPHONE-1.png" 
+								 alt="Screenshot dell'app Chat Heritage che mostra la selezione degli itinerari" 
+								 class="image1"
+								 loading="lazy"
+								 decoding="async">
+						</div>
+					</div>
+					<div class="content-block">
+						<div class="step-badge" aria-label="Primo passo">Step 1</div>
+						<h2 class="content-title" id="step1-title">"Monumenti iconici" o "Misteri & Leggende"?</h2>
+						<ul class="feature-list" role="list">
+							<li role="listitem"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Disponibili 2 tipologie di itinerari</li>
+							<li role="listitem"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Scegli l'itinerario desiderato</li>
+							<li role="listitem"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Cliccalo per scoprirne i dettagli</li>
+							<li role="listitem"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Premi su "Let's go!"</li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- Second Section -->
+				<section class="content-section slide-in-right" data-animation="slide-right" aria-labelledby="step2-title">
+					<div class="image-container">
+						<div class="placeholder-image">
+							<img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/LEONE_MARKER-IPHONE-2.png" 
+								 alt="Screenshot di WhatsApp con Leo che dà il benvenuto" 
+								 class="image2"
+								 loading="lazy"
+								 decoding="async">
+						</div>
+					</div>
+					<div class="content-block">
+						<div class="step-badge" aria-label="Secondo passo">Step 2</div>
+						<h2 class="content-title" id="step2-title">Avvia la guida-chatbot. <br> Leo ti darà il benvenuto!</h2>
+						<ul class="feature-list" role="list">
+							<li role="listitem"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>WhatsApp si aprirà automaticamente</li>
+							<li role="listitem"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Leo è pronto ad accompagnarti</li>
+							<li role="listitem"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Premi subito il tasto <img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/ICONA_INVIO_WHATSAPP.png" alt="icona invio WhatsApp" class="whatsappicon"></li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- Third Section -->
+				<section class="content-section slide-in-left" data-animation="slide-left" aria-labelledby="step3-title">
+					<div class="image-container">
+						<div class="placeholder-image">
+							<img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/GIF_STEP_3%2B4.gif" 
+								 alt="Animazione che mostra l'interazione con Leo durante il tour" 
+								 class="image3"
+								 loading="lazy"
+								 decoding="async">
+						</div>
+					</div>
+					<div class="content-block">
+						<div class="step-badge" aria-label="Terzo passo">Step 3</div>
+						<h2 class="content-title" id="step3-title">Immergiti nel tuo itinerario: <br> interagisci con Leo!</h2>
+						<p class="content-description">
+							<i class="fa-regular fa-thumbs-up" aria-hidden="true"></i>&nbsp;Ce l'hai fatta! <br> 
+							Scopri Venezia in modo unico e speciale. Potrai decidere se preferire una guida virtuale testuale o una guida audio. <br> 
+							Tutto a portata di smartphone. <br> 
+							Buona esplorazione!
+						</p>
+					</div>
+				</section>
+			</div>
+		</section>
+
+<!------------------------------------------------------------------------------------ 5 - Gallery & Map Section ------------------------------------------------------------------------------------>
+		<section class="gallery-section" id="gallery-title" aria-labelledby="gallery-title">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title">Esplora i Luoghi Iconici</h2>
+					<p class="section-subtitle">Scopri i monumenti e i tesori nascosti che visiterai nei nostri itinerari</p>
+				</div>
+
+				<!-- Tabs per filtrare gli itinerari -->
+				<div class="gallery-tabs">
+					<button class="gallery-tab active" data-tab="all">Tutti i Luoghi</button>
+					<button class="gallery-tab" data-tab="monumenti">Monumenti Iconici</button>
+					<button class="gallery-tab" data-tab="misteri">Misteri & Leggende</button>
+				</div>
+
+				<!-- Gallery Grid -->
+				<div class="gallery-grid">
+					<article class="gallery-item" data-category="monumenti">
+						<div class="gallery-image">
+							<img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/compress-DORSODURO_CARD.png" alt="Basilica di Santa Maria della Salute a Dorsoduro" loading="lazy">
+							<div class="gallery-overlay">
+								<div class="gallery-info">
+									<h3>Sestiere Dorsoduro</h3>
+									<p>Basilica della Salute, Gallerie dell'Accademia, Punta della Dogana</p>
+									<span class="gallery-badge monumenti">Monumenti Iconici</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="gallery-item" data-category="monumenti">
+						<div class="gallery-image">
+							<img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/compress-SANMARCO_CARD.png" alt="Piazza San Marco con la Basilica" loading="lazy">
+							<div class="gallery-overlay">
+								<div class="gallery-info">
+									<h3>Piazza San Marco</h3>
+									<p>Basilica di San Marco, Palazzo Ducale, Campanile, Torre dell'Orologio</p>
+									<span class="gallery-badge monumenti">Monumenti Iconici</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="gallery-item" data-category="misteri">
+						<div class="gallery-image">
+							<img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/compress-CANNAREGIO_CARD.png" alt="Ghetto di Venezia a Cannaregio" loading="lazy">
+							<div class="gallery-overlay">
+								<div class="gallery-info">
+									<h3>Sestiere Cannaregio</h3>
+									<p>Ghetto Ebraico, Chiesa della Madonna dell'Orto, Fondamenta Misericordia</p>
+									<span class="gallery-badge misteri">Misteri & Leggende</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="gallery-item" data-category="misteri">
+						<div class="gallery-image">
+							<img src="https://raw.githubusercontent.com/ChatHeritage/Chat_Heritage-home/refs/heads/main/img/compress-RIALTO_SANMARCO_CARD.png" alt="Ponte di Rialto al tramonto" loading="lazy">
+							<div class="gallery-overlay">
+								<div class="gallery-info">
+									<h3>Da Rialto a San Marco</h3>
+									<p>Ponte di Rialto, Mercato, Palazzo Contarini del Bovolo, Scala del Bovolo</p>
+									<span class="gallery-badge misteri">Misteri & Leggende</span>
+								</div>
+							</div>
+						</div>
+					</article>
+					
+				</div>
+			</div>
+		</section>
+
+<!--------------------------------------------------------------------------------------- FOOTER Section ----------------------------------------------------------------------------------->
+
+		<!-- Footer -->
+		<footer class="footer" role="contentinfo">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>Chat Heritage</h3>
+						<p>La tua guida-chatbot virtuale per scoprire Venezia e la sua storia in modo unico e speciale. Risparmia tempo, pianificazione e budget.</p>
+					</div>
+					<div class="footer-section">
+						<h3>Il Servizio</h3>
+						<ul class="footer-links">
+							<li><a href="#chièleo">Chi è Leo</a></li>
+							<li><a href="#comefunziona">Come funziona</a></li>
+							<li><a href="#gallery-title">Gallery</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h3>Scopri</h3>
+						<ul class="footer-links">
+							<li><a href="#chisiamo">Chi Siamo</a></li>
+							<li><a href="#home">Home</a></li>
+							<li><a href="#gallery-title">Luoghi Iconici</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h3>Informazioni</h3>
+						<ul class="footer-links">
+							<li><a href="mailto:info@chatheritage.com">Contattaci</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Termini di Servizio</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2025 Chat Heritage - Chatta con la Storia! Tutti i diritti riservati.</p>
+				</div>
+			</div>
+		</footer>
+
+        <!-- JavaScript -->
+		<script src="script.js"></script>
+		<script src="script_lingue-2.js"></script>
+		<script src="web-vitals.js"></script>
+		<script src="mobile-menu-autoclose.js"></script>
+		
+		<!-- Script per gestione video Hero - AUTOPLAY FORZATO -->
+		<script>
+			// Gestione video hero con autoplay SEMPRE ATTIVO
+			document.addEventListener('DOMContentLoaded', function() {
+				const heroVideo = document.querySelector('.hero-video');
+				
+				if (heroVideo) {
+					// Funzione per forzare il play del video
+					function forcePlayVideo() {
+						heroVideo.play().catch(function(error) {
+							console.log('Tentativo play video fallito, riprovo:', error);
+							// Se il browser blocca l'autoplay, prova a rimuovere e riaggiungere l'attributo muted
+							heroVideo.muted = true;
+							heroVideo.play().catch(function(retryError) {
+								console.warn('Impossibile avviare video automaticamente:', retryError);
+							});
+						});
+					}
+					
+					// Forza il play all'avvio
+					forcePlayVideo();
+					
+					// Gestione errori caricamento video
+					heroVideo.addEventListener('error', function() {
+						console.warn('Errore caricamento video hero');
+						const container = document.querySelector('.hero-video-container');
+						if (container) {
+							container.classList.add('video-error');
+						}
+					});
+					
+					// Forza il play quando il video è pronto
+					heroVideo.addEventListener('loadeddata', function() {
+						forcePlayVideo();
+					});
+					
+					// Forza il play quando il video è completamente caricato
+					heroVideo.addEventListener('canplay', function() {
+						forcePlayVideo();
+					});
+					
+					// Gestione visibilità pagina - riavvia il video quando la tab diventa attiva
+					document.addEventListener('visibilitychange', function() {
+						if (!document.hidden && heroVideo.paused) {
+							forcePlayVideo();
+						}
+					});
+					
+					// Touch/Click fallback per mobile (alcuni browser richiedono interazione utente)
+					let userInteracted = false;
+					function handleUserInteraction() {
+						if (!userInteracted && heroVideo.paused) {
+							userInteracted = true;
+							forcePlayVideo();
+						}
+					}
+					
+					document.addEventListener('touchstart', handleUserInteraction, { once: true, passive: true });
+					document.addEventListener('click', handleUserInteraction, { once: true });
+					
+					// Controllo periodico per assicurarsi che il video sia sempre in play
+					setInterval(function() {
+						if (heroVideo.paused && !document.hidden) {
+							forcePlayVideo();
+						}
+					}, 3000); // Controlla ogni 3 secondi
+				}
+			});
+		</script>
+
+		<!-- Script per Gallery Tabs Filtering -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const galleryTabs = document.querySelectorAll('.gallery-tab');
+				const galleryItems = document.querySelectorAll('.gallery-item');
+
+				galleryTabs.forEach(function(tab) {
+					tab.addEventListener('click', function() {
+						const filterValue = this.getAttribute('data-tab');
+
+						// Rimuovi classe active da tutti i tab
+						galleryTabs.forEach(function(t) {
+							t.classList.remove('active');
+						});
+
+						// Aggiungi classe active al tab cliccato
+						this.classList.add('active');
+
+						// Filtra gallery items
+						galleryItems.forEach(function(item) {
+							const category = item.getAttribute('data-category');
+
+							if (filterValue === 'all') {
+								item.style.display = 'block';
+								setTimeout(function() {
+									item.style.opacity = '1';
+									item.style.transform = 'scale(1)';
+								}, 10);
+							} else if (category === filterValue) {
+								item.style.display = 'block';
+								setTimeout(function() {
+									item.style.opacity = '1';
+									item.style.transform = 'scale(1)';
+								}, 10);
+							} else {
+								item.style.opacity = '0';
+								item.style.transform = 'scale(0.8)';
+								setTimeout(function() {
+									item.style.display = 'none';
+								}, 300);
+							}
+						});
+					});
+				});
+			});
+		</script>
+
+
+	</body>
+</html>

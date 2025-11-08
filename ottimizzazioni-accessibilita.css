@@ -1,0 +1,435 @@
+/* ================================================================
+   OTTIMIZZAZIONI ACCESSIBILITÀ PER CHAT HERITAGE
+   Versione pulita - Solo per elementi esistenti nell'HTML
+   Aggiungi queste regole al tuo style-final.css o come file separato
+   ================================================================ */
+
+/* ================================================================
+   1. SKIP LINKS MIGLIORATI (esistono nell'HTML)
+   ================================================================ */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 10000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: top 0.2s ease;
+    white-space: nowrap;
+}
+
+.skip-link:focus,
+.sr-only-focusable:focus {
+    top: 0;
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* ================================================================
+   2. SCREEN READER ONLY CONTENT MIGLIORATO (esiste nell'HTML)
+   ================================================================ */
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.sr-only-focusable {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ================================================================
+   3. FOCUS STATES MIGLIORATI
+   ================================================================ */
+
+/* Focus ring più robusto per tutti gli elementi interattivi */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Focus per hero CTA (esiste nell'HTML) */
+.hero-cta:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+/* Focus per dropdown (esiste nell'HTML) */
+.dropdown button:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Focus per navigation links (esiste nell'HTML) */
+.nav-menu a:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Focus per gallery tabs (esiste nell'HTML) */
+.gallery-tab:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Focus per gallery items (esiste nell'HTML) */
+.gallery-item:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+}
+
+/* ================================================================
+   4. REDUCED MOTION SUPPORT
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    /* Disabilita animazioni hero */
+    .hero-content,
+    .hero-title,
+    .hero-subtitle,
+    .hero-cta {
+        animation: none !important;
+    }
+    
+    /* Disabilita animazioni content sections */
+    .content-section,
+    .slide-in-left,
+    .slide-in-right {
+        transform: none !important;
+        opacity: 1 !important;
+        animation: none !important;
+    }
+    
+    /* Disabilita animazione float Leo */
+    .leo-image img {
+        animation: none !important;
+    }
+    
+    /* Disabilita hover effects */
+    .hero-cta:hover,
+    .stat-card:hover,
+    .gallery-item:hover,
+    .gallery-tab:hover {
+        transform: none !important;
+    }
+    
+    /* Mantieni solo le transizioni essenziali */
+    .hero-cta,
+    .gallery-tab {
+        transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+}
+
+/* ================================================================
+   5. HIGH CONTRAST MODE SUPPORT
+   ================================================================ */
+
+@media (prefers-contrast: high) {
+    /* Hero section */
+    .hero {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+    
+    /* CTA e buttons */
+    .hero-cta {
+        border: 3px solid #fff !important;
+        background: transparent !important;
+        color: #fff !important;
+    }
+    
+    /* Dropdown */
+    .dropdown button {
+        border: 2px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    /* Gallery tabs */
+    .gallery-tab {
+        border: 2px solid #000 !important;
+    }
+    
+    .gallery-tab.active {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    /* Cards */
+    .stat-card,
+    .leo-feature-item {
+        border: 2px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* ================================================================
+   6. TOUCH TARGET OPTIMIZATION (Mobile)
+   ================================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Assicura target touch di 44px minimi per tutti gli elementi interattivi */
+    .nav-menu a,
+    .hero-cta,
+    .dropdown button,
+    .gallery-tab,
+    .mobile-menu-btn {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Spazio maggiore tra navigation items */
+    .nav-menu li {
+        margin-bottom: 1rem;
+    }
+    
+    /* Spazio maggiore tra feature list items */
+    .feature-list li {
+        margin-bottom: 1.25rem;
+    }
+    
+    /* Gallery items più spaziati */
+    .gallery-grid {
+        gap: 40px;
+    }
+}
+
+/* ================================================================
+   7. KEYBOARD NAVIGATION MIGLIORATA
+   ================================================================ */
+
+/* Mobile menu button keyboard focus */
+.mobile-menu-btn:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Gallery grid keyboard navigation */
+.gallery-grid:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Footer links focus */
+.footer-links a:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* ================================================================
+   8. PRINT ACCESSIBILITY
+   ================================================================ */
+
+@media print {
+    /* Mostra gli URL dei link */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    /* Evita interruzioni di pagina nei contenuti critici */
+    .content-section,
+    .stat-card,
+    .leo-feature-item,
+    .gallery-item {
+        page-break-inside: avoid;
+    }
+    
+    /* Nascondi elementi non necessari per la stampa */
+    .hero-video,
+    .hero-video-container,
+    .dropdown,
+    .mobile-menu-btn,
+    .gallery-tabs {
+        display: none !important;
+    }
+    
+    /* Hero content leggibile */
+    .hero {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 2rem !important;
+        min-height: auto !important;
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        color: #000 !important;
+    }
+    
+    /* Contrasto alto per la stampa */
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    .section-title,
+    .section-subtitle {
+        color: #000 !important;
+    }
+}
+
+/* ================================================================
+   9. FORCED COLORS MODE (Windows High Contrast)
+   ================================================================ */
+
+@media (forced-colors: active) {
+    .hero-cta {
+        forced-color-adjust: none;
+        border: 2px solid ButtonText;
+        background: ButtonFace;
+        color: ButtonText;
+    }
+    
+    .hero {
+        forced-color-adjust: none;
+        background: Canvas;
+        color: CanvasText;
+    }
+    
+    .stat-card,
+    .gallery-item {
+        border: 1px solid CanvasText;
+        background: Canvas;
+    }
+    
+    .gallery-tab {
+        border: 2px solid ButtonText;
+        background: ButtonFace;
+        color: ButtonText;
+    }
+    
+    .gallery-tab.active {
+        background: Highlight;
+        color: HighlightText;
+    }
+}
+
+/* ================================================================
+   10. DARK MODE SUPPORT (Bonus)
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+    /* Opzionale: supporto per dark mode nativo del browser */
+    /* Puoi abilitare queste regole se vuoi supportare il dark mode */
+    
+    /*
+    body {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+    
+    .about-section,
+    .gallery-section {
+        background: #2d3748;
+    }
+    
+    .stat-card {
+        background: #374151;
+        color: #fff;
+    }
+    */
+}
+
+/* ================================================================
+   11. UTILITIES ACCESSIBILITÀ
+   ================================================================ */
+
+/* Nasconde elementi decorativi dagli screen reader */
+.decorative,
+[aria-hidden="true"] {
+    speak: none;
+}
+
+/* Migliora la leggibilità del testo */
+.text-readable {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+/* Visually hidden ma accessibile agli screen reader */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ================================================================
+   12. LOADING VIDEO STATES ACCESSIBILI
+   ================================================================ */
+
+/* Video hero loading con messaggio accessibile */
+.hero-video-container.loading::after {
+    content: 'Caricamento video in corso...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+/* ================================================================
+   FINE OTTIMIZZAZIONI ACCESSIBILITÀ
+   ================================================================ */
