@@ -1,5 +1,6 @@
 /* ================================================================
    CHAT HERITAGE - MENU HAMBURGER FULL SCREEN
+   Versione Unificata e Ottimizzata
    Menu a tendina che copre tutta la schermata con logo centrato
    ================================================================ */
 
@@ -81,15 +82,16 @@
        ============================================================ */
     
     .nav-container input[type="checkbox"] {
-        display: block;
+        display: block !important;
         position: absolute;
         height: 44px;
         width: 44px;
         top: 10px;
         left: 10px;
         z-index: 1004;
-        opacity: 0;
+        opacity: 0 !important;
         cursor: pointer;
+        pointer-events: all !important;
         -webkit-tap-highlight-color: transparent;
     }
     
@@ -98,7 +100,7 @@
        ============================================================ */
     
     .hamburger-lines {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         justify-content: space-between;
         height: 22px;
@@ -107,7 +109,8 @@
         top: 21px;
         left: 18px;
         z-index: 1003;
-        pointer-events: none;
+        pointer-events: none !important;
+        visibility: visible !important;
     }
     
     .hamburger-lines .line {
@@ -133,7 +136,7 @@
     
     /* ============================================================
        3.4 ANIMAZIONE HAMBURGER → X
-       Hamburger NERO quando chiuso, X BIANCA quando aperto
+       Hamburger NERO quando chiuso, X NERO quando aperto
        ============================================================ */
     
     /* Stato DEFAULT: Hamburger NERO (quando menu chiuso) */
@@ -141,7 +144,7 @@
         background: #0e2431;
     }
     
-    /* Stato APERTO: X BIANCA (quando menu aperto) */
+    /* Stato APERTO: X NERO (quando menu aperto) */
     .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line {
         background: #0e2431;
     }
@@ -161,6 +164,7 @@
     
     /* ============================================================
        3.5 MENU FULL SCREEN (copre tutta la schermata)
+       IMPORTANTE: Usa TRANSFORM per animazioni fluide
        ============================================================ */
     
     nav[role="navigation"] {
@@ -175,21 +179,28 @@
         overflow-y: auto;
         background: rgba(14, 36, 49, 0.98);
         backdrop-filter: blur(10px);
+        /* NON usare display: none qui - rompe le animazioni! */
     }
     
     /* Menu items CENTRATI */
     .nav-menu {
         display: flex !important;
-        flex-direction: column;
+        flex-direction: column !important;
         gap: 0;
         margin: 0;
-        padding: 0;
+        padding: 2rem 0 0 0;
         background: transparent;
-        height: 100%;
         width: 100%;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem 0;
+        justify-content: center !important;
+        align-items: center !important;
+        flex: 0 0 auto;
+    }
+
+    /* Container per menu completo con social icons */
+    nav[role="navigation"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     
     .nav-menu li {
@@ -227,7 +238,71 @@
     .nav-menu a::after {
         display: none;
     }
-    
+
+    /* ============================================================
+       3.5.5 SOCIAL ICONS nel Mobile Menu (solo mobile)
+       ============================================================ */
+
+    .mobile-menu-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem 3rem;
+        margin-top: auto;
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .mobile-social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .mobile-social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+        background: linear-gradient(135deg, #8e5edc 0%, #667eea 100%);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: rgba(142, 94, 220, 0.3) 0px 6px 20px;
+    }
+
+    .mobile-social-icons a:hover,
+    .mobile-social-icons a:active {
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: rgba(142, 94, 220, 0.5) 0px 8px 25px;
+    }
+
+    .mobile-social-icons a:focus-visible {
+        outline: 3px solid #3b82f6;
+        outline-offset: 4px;
+    }
+
+    /* Colori specifici per ogni social nel mobile menu */
+    .mobile-social-icons a:nth-child(1):hover {
+        background: #1877f2;
+    }
+
+    .mobile-social-icons a:nth-child(2):hover {
+        background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+
+    .mobile-social-icons a:nth-child(3):hover {
+        background: #000000;
+    }
+
     /* ============================================================
        3.6 MENU APERTO (quando checkbox è checked)
        ============================================================ */
@@ -237,7 +312,15 @@
     }
     
     /* ============================================================
-       3.7 DROPDOWN LINGUE - Mantieni visibile sopra il menu
+       3.7 PREVIENI SCROLL BODY quando menu aperto
+       ============================================================ */
+    
+    body:has(.nav-container input[type="checkbox"]:checked) {
+        overflow: hidden;
+    }
+    
+    /* ============================================================
+       3.8 DROPDOWN LINGUE - Mantieni visibile sopra il menu
        ============================================================ */
     
     .nav-container input[type="checkbox"]:checked ~ .dropdown {
@@ -258,40 +341,56 @@
     .nav-container {
         padding: 0 0.75rem;
     }
-    
+
     .logo {
         height: 32px;
     }
-    
+
     .dropdown {
         right: 12px;
     }
-    
+
     .dropdown button {
         min-width: 90px !important;
         padding: 0.4rem 0.7rem !important;
         font-size: 0.8rem !important;
     }
-    
+
     .hamburger-lines {
         left: 15px;
         width: 26px;
         height: 20px;
     }
-    
+
     .hamburger-lines .line {
         height: 2.5px;
     }
-    
+
     .nav-container input[type="checkbox"] {
         left: 8px;
         width: 40px;
         height: 40px;
     }
-    
+
     .nav-menu a {
         font-size: 1.2rem;
         padding: 1.3rem 1.5rem;
+    }
+
+    .mobile-social-icons {
+        gap: 1.2rem;
+    }
+
+    .mobile-social-icons a {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+        font-size: 1.4rem;
+    }
+
+    .mobile-menu-social {
+        padding: 1.5rem 1rem 2.5rem;
     }
 }
 
@@ -303,16 +402,32 @@
     .logo {
         height: 28px;
     }
-    
+
     .dropdown button {
         min-width: 80px !important;
         font-size: 0.75rem !important;
         padding: 0.35rem 0.6rem !important;
     }
-    
+
     .nav-menu a {
         font-size: 1.1rem;
         padding: 1.2rem 1rem;
+    }
+
+    .mobile-social-icons {
+        gap: 1rem;
+    }
+
+    .mobile-social-icons a {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        min-height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .mobile-menu-social {
+        padding: 1.2rem 0.75rem 2rem;
     }
 }
 
@@ -324,14 +439,30 @@
     .logo {
         height: 38px;
     }
-    
+
     .dropdown button {
         min-width: 110px !important;
     }
-    
+
     .nav-menu a {
         font-size: 1.5rem;
         padding: 1.6rem 2rem;
+    }
+
+    .mobile-social-icons {
+        gap: 2rem;
+    }
+
+    .mobile-social-icons a {
+        width: 55px;
+        height: 55px;
+        min-width: 55px;
+        min-height: 55px;
+        font-size: 1.6rem;
+    }
+
+    .mobile-menu-social {
+        padding: 2.5rem 1rem 3.5rem;
     }
 }
 
@@ -344,15 +475,31 @@
         padding: 1rem 0;
         justify-content: flex-start;
     }
-    
+
     .nav-menu a {
         padding: 1rem 2rem;
         font-size: 1.2rem;
     }
-    
+
     nav[role="navigation"] {
         top: 60px;
         height: calc(100vh - 60px);
+    }
+
+    .mobile-menu-social {
+        padding: 1rem 1rem 1.5rem;
+    }
+
+    .mobile-social-icons {
+        gap: 1rem;
+    }
+
+    .mobile-social-icons a {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 1.2rem;
     }
 }
 
@@ -366,7 +513,12 @@
     .nav-container input[type="checkbox"] {
         display: none !important;
     }
-    
+
+    /* Nascondi social icons mobile menu su desktop */
+    .mobile-menu-social {
+        display: none !important;
+    }
+
     /* Ripristina nav desktop */
     nav[role="navigation"] {
         position: static !important;
@@ -375,10 +527,13 @@
         height: auto !important;
         background: transparent !important;
         overflow: visible !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
     }
     
     /* Menu desktop orizzontale */
     .nav-menu {
+        display: flex !important;
         flex-direction: row !important;
         gap: 2.5rem !important;
         padding: 0 !important;
@@ -401,6 +556,7 @@
         font-weight: 500 !important;
         color: #64748b !important;
         text-align: left !important;
+        position: relative;
     }
     
     .nav-menu a:hover {
@@ -432,6 +588,11 @@
         transform: none !important;
         height: 40px !important;
         opacity: 1 !important;
+    }
+    
+    /* Ripristina body scroll */
+    body {
+        overflow: visible !important;
     }
 }
 
@@ -491,8 +652,14 @@
         .hamburger-lines .line,
         nav[role="navigation"],
         .nav-menu a,
-        .logo {
+        .logo,
+        .mobile-social-icons a {
             transition: none !important;
+        }
+
+        .mobile-social-icons a:hover,
+        .mobile-social-icons a:active {
+            transform: none !important;
         }
     }
 }
@@ -528,7 +695,3 @@
         }
     }
 }
-
-/* ================================================================
-   FINE MENU HAMBURGER FULL SCREEN
-   ================================================================ */
