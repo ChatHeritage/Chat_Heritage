@@ -1,0 +1,708 @@
+/* ================================================================
+   CHAT HERITAGE - ENHANCEMENTS
+   File ottimizzato: Video Hero + Accessibilità + Layout Leo
+   ================================================================
+
+   IMPORTANTE: Gli stili tipografici (font, dimensioni, colori)
+   sono gestiti in style-final.css e media_queries.css.
+
+   Questo file contiene SOLO:
+   1. Video Hero Autoplay Fix (con !important necessari)
+   2. Layout specifici per sezione Leo su mobile
+   3. Ottimizzazioni accessibilità (focus, screen readers, etc.)
+
+   ================================================================ */
+
+/* ================================================================
+   SEZIONE 1: VIDEO HERO AUTOPLAY FIX
+   Assicura che il video sia sempre in autoplay su tutti i dispositivi
+   ================================================================ */
+
+/* Forza il video a essere sempre visibile e in autoplay */
+.hero-video {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Previene che il video venga nascosto da media queries */
+@media screen and (max-width: 480px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* Landscape orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+        min-height: 100vh !important;
+    }
+}
+
+/* High DPI displays */
+@media screen and (min-resolution: 192dpi),
+       screen and (min-resolution: 2dppx) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* Reduced motion - il video continua comunque a essere riprodotto */
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* Print - nascondi solo in stampa */
+@media print {
+    .hero-video {
+        display: none !important;
+    }
+}
+
+/* IE11 fallback - mantieni il video */
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .hero-video {
+        display: block !important;
+    }
+}
+
+/* Assicura che il container del video sia sempre visibile */
+.hero-video-container {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+/* Video hero loading con messaggio accessibile */
+.hero-video-container.loading::after {
+    content: 'Caricamento video in corso...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+/* ================================================================
+   SEZIONE 2: LAYOUT E CENTRATURA ELEMENTI LEO SU MOBILE
+   ================================================================
+   NOTA: Gli stili tipografici (font, dimensioni, colori) sono gestiti
+   in style-final.css e media_queries.css. Qui manteniamo solo
+   le regole di layout specifiche per la sezione Leo.
+   ================================================================ */
+
+/* Mobile Extra Small (max 374px) */
+@media screen and (max-width: 374px) {
+    .leo-section .leo-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .leo-feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .leo-feature-item i {
+        margin-bottom: 1rem;
+    }
+    
+    .leo-feature-item div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .leo-section .section-title {
+        text-align: center;
+    }
+
+    .leo-description {
+        text-align: center;
+    }
+}
+
+/* Mobile Small (375px - 479px) */
+@media screen and (min-width: 375px) and (max-width: 479px) {
+    .leo-section .leo-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .leo-feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .leo-feature-item i {
+        margin-bottom: 1rem;
+    }
+    
+    .leo-feature-item div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .leo-section .section-title {
+        text-align: center;
+    }
+
+    .leo-description {
+        text-align: center;
+    }
+}
+
+/* Mobile Standard (max 480px) */
+@media screen and (max-width: 480px) {
+    .leo-section .leo-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .leo-feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .leo-feature-item i {
+        margin-bottom: 1rem;
+    }
+    
+    .leo-feature-item div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .leo-section .section-title {
+        text-align: center;
+    }
+
+    .leo-description {
+        text-align: center;
+    }
+}
+
+/* Mobile Large (481px - 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .leo-section .leo-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .leo-feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .leo-feature-item i {
+        margin-bottom: 1rem;
+    }
+    
+    .leo-feature-item div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .leo-section .section-title {
+        text-align: center;
+    }
+    
+    .leo-description {
+        text-align: center;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .leo-section .leo-features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .leo-feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .leo-feature-item i {
+        margin-bottom: 1rem;
+    }
+    
+    .leo-feature-item div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .leo-section .section-title {
+        text-align: center;
+    }
+    
+    .leo-description {
+        text-align: center;
+    }
+}
+
+/* ================================================================
+   2.7 CENTRATURA IMMAGINE LEO SU MOBILE
+   ================================================================ */
+
+@media screen and (max-width: 1023px) {
+    .leo-image {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .leo-image img {
+        margin: 0 auto;
+    }
+}
+
+/* ================================================================
+   SEZIONE 3: OTTIMIZZAZIONI ACCESSIBILITÀ
+   ================================================================ */
+
+/* ================================================================
+   3.1 SKIP LINKS MIGLIORATI
+   ================================================================ */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 10000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: top 0.2s ease;
+    white-space: nowrap;
+}
+
+.skip-link:focus,
+.sr-only-focusable:focus {
+    top: 0;
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* ================================================================
+   3.2 SCREEN READER ONLY CONTENT
+   ================================================================ */
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.sr-only-focusable {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ================================================================
+   3.3 FOCUS STATES MIGLIORATI
+   ================================================================ */
+
+/* Focus ring più robusto per tutti gli elementi interattivi */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Focus per hero CTA */
+.hero-cta:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+/* Focus per dropdown */
+.dropdown button:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Focus per navigation links */
+.nav-menu a:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Focus per gallery tabs */
+.gallery-tab:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Focus per gallery items */
+.gallery-item:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+}
+
+/* Mobile menu button keyboard focus */
+.mobile-menu-btn:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Gallery grid keyboard navigation */
+.gallery-grid:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Footer links focus */
+.footer-links a:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* ================================================================
+   3.4 REDUCED MOTION SUPPORT
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    /* Disabilita animazioni hero */
+    .hero-content,
+    .hero-title,
+    .hero-subtitle,
+    .hero-cta {
+        animation: none !important;
+    }
+    
+    /* Disabilita animazioni content sections */
+    .content-section,
+    .slide-in-left,
+    .slide-in-right {
+        transform: none !important;
+        opacity: 1 !important;
+        animation: none !important;
+    }
+    
+    /* Disabilita animazione float Leo */
+    .leo-image img {
+        animation: none !important;
+    }
+    
+    /* Disabilita hover effects */
+    .hero-cta:hover,
+    .stat-card:hover,
+    .gallery-item:hover,
+    .gallery-tab:hover {
+        transform: none !important;
+    }
+    
+    /* Mantieni solo le transizioni essenziali */
+    .hero-cta,
+    .gallery-tab {
+        transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+}
+
+/* ================================================================
+   3.5 HIGH CONTRAST MODE SUPPORT
+   ================================================================ */
+
+@media (prefers-contrast: high) {
+    /* Hero section */
+    .hero {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+    
+    /* CTA e buttons */
+    .hero-cta {
+        border: 3px solid #fff !important;
+        background: transparent !important;
+        color: #fff !important;
+    }
+    
+    /* Dropdown */
+    .dropdown button {
+        border: 2px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    /* Gallery tabs */
+    .gallery-tab {
+        border: 2px solid #000 !important;
+    }
+    
+    .gallery-tab.active {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    /* Cards */
+    .stat-card,
+    .leo-feature-item {
+        border: 2px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* ================================================================
+   3.6 TOUCH TARGET OPTIMIZATION (Mobile)
+   ================================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Assicura target touch di 44px minimi per tutti gli elementi interattivi */
+    .nav-menu a,
+    .hero-cta,
+    .dropdown button,
+    .gallery-tab,
+    .mobile-menu-btn {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Spazio maggiore tra navigation items */
+    .nav-menu li {
+        margin-bottom: 1rem;
+    }
+    
+    /* Spazio maggiore tra feature list items */
+    .feature-list li {
+        margin-bottom: 1.25rem;
+    }
+    
+    /* Gallery items più spaziati */
+    .gallery-grid {
+        gap: 40px;
+    }
+}
+
+/* ================================================================
+   3.7 PRINT ACCESSIBILITY
+   ================================================================ */
+
+@media print {
+    /* Mostra gli URL dei link */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    /* Evita interruzioni di pagina nei contenuti critici */
+    .content-section,
+    .stat-card,
+    .leo-feature-item,
+    .gallery-item {
+        page-break-inside: avoid;
+    }
+    
+    /* Nascondi elementi non necessari per la stampa */
+    .hero-video,
+    .hero-video-container,
+    .dropdown,
+    .mobile-menu-btn,
+    .gallery-tabs {
+        display: none !important;
+    }
+    
+    /* Hero content leggibile */
+    .hero {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 2rem !important;
+        min-height: auto !important;
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        color: #000 !important;
+    }
+    
+    /* Contrasto alto per la stampa */
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    .section-title,
+    .section-subtitle {
+        color: #000 !important;
+    }
+}
+
+/* ================================================================
+   3.8 FORCED COLORS MODE (Windows High Contrast)
+   ================================================================ */
+
+@media (forced-colors: active) {
+    .hero-cta {
+        forced-color-adjust: none;
+        border: 2px solid ButtonText;
+        background: ButtonFace;
+        color: ButtonText;
+    }
+    
+    .hero {
+        forced-color-adjust: none;
+        background: Canvas;
+        color: CanvasText;
+    }
+    
+    .stat-card,
+    .gallery-item {
+        border: 1px solid CanvasText;
+        background: Canvas;
+    }
+    
+    .gallery-tab {
+        border: 2px solid ButtonText;
+        background: ButtonFace;
+        color: ButtonText;
+    }
+    
+    .gallery-tab.active {
+        background: Highlight;
+        color: HighlightText;
+    }
+}
+
+/* ================================================================
+   3.9 UTILITIES ACCESSIBILITÀ
+   ================================================================ */
+
+/* Nasconde elementi decorativi dagli screen reader */
+.decorative,
+[aria-hidden="true"] {
+    speak: none;
+}
+
+/* Migliora la leggibilità del testo */
+.text-readable {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+/* ================================================================
+   FINE ENHANCEMENTS - VERSIONE UNIFICATA
+   ================================================================ */
