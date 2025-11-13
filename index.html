@@ -18,7 +18,7 @@
 		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		
 		<!-- PRELOAD VIDEO HERO -->
-		<link rel="preload" href="./video/video-intro-LeoLow.mp4" as="video" type="video/mp4">
+		<link rel="preload" href="./video/CronostoriaVENEZIA.mp4" as="video" type="video/mp4">
 		
 		<!-- primary meta tags -->
 		<title>Chat Heritage - Chatta con la Storia!</title>
@@ -26,17 +26,26 @@
 		<meta name="description" content="Scopri Venezia con Chat Heritage: tour guidati interattivi attraverso chatbot Leo. Itinerari unici tra monumenti iconici e misteri della Serenissima.">
 		<meta name="keywords" content="Venezia tour, chatbot guida turistica, itinerari Venezia, Chat Heritage, Leo chatbot, tour interattivi Venezia, guida virtuale">
 
-		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://cdnjs.cloudflare.com;"> -->
-		
+		<!--Content Security Policy ATTIVATA-->
+		<meta http-equiv="Content-Security-Policy" content="
+			default-src 'self'; 
+			img-src 'self' https: data: blob:; 
+			script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://cdnjs.cloudflare.com https://flagsapi.com; 
+			style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://ka-f.fontawesome.com https://ka-p.fontawesome.com; 
+			font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com https://ka-p.fontawesome.com; 
+			connect-src 'self' https://flagsapi.com https://ka-f.fontawesome.com https://ka-p.fontawesome.com;
+			media-src 'self' blob:;
+		">
+
 		<!-- MIGLIORAMENTO 3: Meta Tags SEO Avanzati -->
 		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 		<meta name="author" content="Chat Heritage">
 		<meta name="theme-color" content="#8e5edc">
 		<link rel="canonical" href="https://www.chatheritage.com/">
 		
-		<!-- Per indicare ai motori di ricerca le versioni alternative -->
-		<link rel="alternate" hreflang="it" href="https://www.chatheritage.com/it/">
-		<link rel="alternate" hreflang="en" href="https://www.chatheritage.com/en/">
+		<!-- FIX: hreflang corretti per single-page app -->
+		<link rel="alternate" hreflang="it" href="https://www.chatheritage.com/?lang=it">
+		<link rel="alternate" hreflang="en" href="https://www.chatheritage.com/?lang=en">
 		<link rel="alternate" hreflang="x-default" href="https://www.chatheritage.com/">
 		
 		<!-- og meta tags ottimizzati -->
@@ -49,8 +58,17 @@
 		<meta property="og:url" content="https://www.chatheritage.com/">
 		<meta property="og:site_name" content="Chat Heritage">
 		<meta property="og:locale" content="it_IT">
+		<meta property="og:locale:alternate" content="en_GB">
 		
-		<!-- MIGLIORAMENTO 4: Structured Data -->
+		<!-- NUOVO: Twitter Cards -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Chat Heritage Venice - Tour Interattivi con AI">
+		<meta name="twitter:description" content="Scopri Venezia con tour guidati interattivi attraverso chatbot Leo. Itinerari unici tra monumenti iconici e misteri della Serenissima.">
+		<meta name="twitter:image" content="https://www.chatheritage.com/img/og-image.jpg">
+		<meta name="twitter:site" content="@chatheritage">
+		<meta name="twitter:creator" content="@chatheritage">
+		
+		<!-- MIGLIORAMENTO 4: Structured Data Arricchita -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -66,11 +84,19 @@
 				"addressCountry": "IT"
 			},
 			"touristType": ["Cultural Tourist", "Technology Enthusiast"],
-			"availableLanguage": ["Italian", "English"],
+			"availableLanguage": ["Italian", "English", "French", "German", "Spanish"],
+			"priceRange": "€€",
+			"isAccessibleForFree": false,
 			"provider": {
 				"@type": "Organization",
 				"name": "Chat Heritage",
-				"url": "https://www.chatheritage.com"
+				"url": "https://www.chatheritage.com",
+				"logo": "https://www.chatheritage.com/img/logo.png",
+				"sameAs": [
+					"https://www.facebook.com/chatheritage",
+					"https://www.instagram.com/chatheritage",
+					"https://twitter.com/chatheritage"
+				]
 			}
 		}
 		</script>
@@ -80,7 +106,12 @@
 			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"name": "Chat Heritage",
-			"url": "https://www.chatheritage.com"
+			"url": "https://www.chatheritage.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://www.chatheritage.com/?s={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
 		}
 		</script>
 		
@@ -91,14 +122,13 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 		<link rel="manifest" href="./manifest.json">
 		
+		
 		<!-- css link -->
 		<link rel="stylesheet" href="style-final.css" type="text/css" media="all">
 		<link rel="stylesheet" href="media_queries.css" type="text/css" media="all">
 		<link rel="stylesheet" href="mobile-menu.css" type="text/css" media="all">
-		<link rel="stylesheet" href="mobile-menu-fix.css" type="text/css" media="all">  <!-- AGGIUNGI QUESTO -->
-		<link rel="stylesheet" href="ottimizzazioni-accessibilita.css" type="text/css" media="all">
-		<link rel="stylesheet" href="video-hero-fix.css" type="text/css" media="all">
-		<link rel="stylesheet" href="font-unification-and-leo-centering.css" type="text/css" media="all">
+		<link rel="stylesheet" href="enhancements.css" type="text/css" media="all">
+		<link rel="stylesheet" href="" type="text/css" media="all">
 		
         <!-- google font link fallback -->
 		<noscript>
@@ -137,30 +167,9 @@
 			});
 		</script>
 		
-		<!-- Polyfills for older browsers -->
-		<script>
-			// Intersection Observer Polyfill
-			if (!('IntersectionObserver' in window)) {
-			    var script = document.createElement('script');
-			    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/intersection-observer/0.12.2/intersection-observer.js';
-			    document.head.appendChild(script);
-			}
-			
-			// CSS Grid Polyfill detection
-			if (!CSS.supports('display', 'grid')) {
-			    var link = document.createElement('link');
-			    link.rel = 'stylesheet';
-			    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/css-grid-polyfill/1.0.0/css-grid-polyfill.min.css';
-			    document.head.appendChild(link);
-			}
-			
-			// Object-fit polyfill for IE
-			if (!('objectFit' in document.documentElement.style)) {
-			    var script = document.createElement('script');
-			    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js';
-			    document.head.appendChild(script);
-			}
-		</script>
+		<!-- FIX: POLYFILLS IE OBSOLETI RIMOSSI -->
+		<!-- I browser moderni (2025) supportano tutti IntersectionObserver, CSS Grid e Object-fit -->
+		
 	</head>
 	<body>
 		<!-- MIGLIORAMENTO 6: Skip Links per Accessibilità -->
@@ -210,6 +219,20 @@
 						<li><a href="#comefunziona">Come funziona</a></li>
 						<li><a href="#gallery-title">Gallery</a></li>
 					</ul>
+					<!-- Social Icons Mobile Menu -->
+					<div class="mobile-menu-social">
+						<div class="mobile-social-icons">
+							<a href="https://www.facebook.com/people/Chat-Heritage/61565845054887/" target="_blank" rel="noopener noreferrer" aria-label="Seguici su Facebook">
+								<i class="fa-brands fa-facebook"></i>
+							</a>
+							<a href="https://www.instagram.com/chatheritage" target="_blank" rel="noopener noreferrer" aria-label="Seguici su Instagram">
+								<i class="fa-brands fa-instagram"></i>
+							</a>
+							<a href="https://www.tiktok.com/@chat.heritage" target="_blank" rel="noopener noreferrer" aria-label="Seguici su TikTok">
+								<i class="fa-brands fa-tiktok"></i>
+							</a>
+						</div>
+					</div>
 				</nav>
 				
 				<!-- ============================================
@@ -248,7 +271,7 @@
 					disablepictureinpicture
 					controlslist="nodownload nofullscreen noremoteplayback">
 					<!-- CORRETTO ✅ -->
-					<source src="./video/video-intro-LeoLow.mp4" type="video/mp4">
+					<source src="./video/CronostoriaVENEZIA.mp4" type="video/mp4">
 					<!-- Fallback per browser che non supportano video -->
 					<div class="hero-video-fallback"></div>
 				</video>
@@ -260,11 +283,20 @@
 			<div class="hero-content">
 				
 				<h1 class="hero-title" id="hero-title">Scegli. <br> Interagisci. <br> Esplora. Conosci.</h1>
-				<p class="hero-subtitle">Venezia e le sue origini. Te le raccontiamo noi attraverso itinerari unici e selezionati.</p>
+				<p class="hero-subtitle">Venezia e le sue origini. <br> Te le raccontiamo noi attraverso itinerari unici e selezionati.</p>
 			
 				<a href="#chisiamo" class="hero-cta" role="button" aria-describedby="cta-description">
 					Scopri di più!
 				</a>
+
+				<!--
+				<div class="demo-area">
+					<a href="#chisiamo" class="hero-cta" role="button" aria-label="Scorri verso il basso">
+						<div class="arrow arrow-first"></div>
+						<div class="arrow arrow-second"></div>
+					</a>
+				</div>
+				-->
 				
 			</div>
 		</section>
@@ -314,7 +346,7 @@
 			<div class="container">
 				<div class="leo-content">
 					<div class="leo-image">
-						<img src="./img/leofullbodyvettoriale.png" alt="Leo il chatbot mascotte di Chat Heritage" loading="lazy">
+						<img src="./img/LEO-FINALE-PNG.png" alt="Leo il chatbot mascotte di Chat Heritage" loading="lazy">
 					</div>
 					<div class="leo-text">
 						<h2 class="section-title" id="leo-title">Incontra Leo, la Tua Guida Virtuale</h2>
@@ -354,7 +386,7 @@
 			</div>
 		</section>
 
-<!--------------------------------------------------------------------------- 4 - Main Content ------------------------------------------------------------>
+<!--------------------------------------------------------------------------- 4 - Main Content Istruzioni ------------------------------------------------------------>
 		<section class="main-content" id="comefunziona" role="main">
 			<div class="container">
 
@@ -530,10 +562,24 @@
 					<div class="footer-section">
 						<h3>Informazioni</h3>
 						<ul class="footer-links">
-							<li><a href="mailto:info@chatheritage.com">Contattaci</a></li>
+							<li><a href="/cdn-cgi/l/email-protection#9af3f4fcf5daf9f2fbeef2ffe8f3eefbfdffb4f9f5f7">Contattaci</a></li>
 							<li><a href="#">Privacy Policy</a></li>
 							<li><a href="#">Termini di Servizio</a></li>
 						</ul>
+					</div>
+				</div>
+				<div class="footer-social">
+					<h3>Seguici</h3>
+					<div class="social-icons">
+						<a href="https://www.facebook.com/people/Chat-Heritage/61565845054887/" target="_blank" rel="noopener noreferrer" aria-label="Seguici su Facebook">
+							<i class="fa-brands fa-facebook"></i>
+						</a>
+						<a href="https://www.instagram.com/chatheritage" target="_blank" rel="noopener noreferrer" aria-label="Seguici su Instagram">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+						<a href="https://www.tiktok.com/@chat.heritage" target="_blank" rel="noopener noreferrer" aria-label="Seguici su TikTok">
+							<i class="fa-brands fa-tiktok"></i>
+						</a>
 					</div>
 				</div>
 				<div class="footer-bottom">
@@ -543,80 +589,13 @@
 		</footer>
 
         <!-- JavaScript -->
-		<script src="script.js"></script>
+		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
 		<script src="script_lingue-2.js"></script>
 		<script src="web-vitals.js"></script>
 		<script src="mobile-menu-autoclose.js"></script>
 		
-		<!-- Script per gestione video Hero - AUTOPLAY FORZATO -->
-		<script>
-			// Gestione video hero con autoplay SEMPRE ATTIVO
-			document.addEventListener('DOMContentLoaded', function() {
-				const heroVideo = document.querySelector('.hero-video');
-				
-				if (heroVideo) {
-					// Funzione per forzare il play del video
-					function forcePlayVideo() {
-						heroVideo.play().catch(function(error) {
-							console.log('Tentativo play video fallito, riprovo:', error);
-							// Se il browser blocca l'autoplay, prova a rimuovere e riaggiungere l'attributo muted
-							heroVideo.muted = true;
-							heroVideo.play().catch(function(retryError) {
-								console.warn('Impossibile avviare video automaticamente:', retryError);
-							});
-						});
-					}
-					
-					// Forza il play all'avvio
-					forcePlayVideo();
-					
-					// Gestione errori caricamento video
-					heroVideo.addEventListener('error', function() {
-						console.warn('Errore caricamento video hero');
-						const container = document.querySelector('.hero-video-container');
-						if (container) {
-							container.classList.add('video-error');
-						}
-					});
-					
-					// Forza il play quando il video è pronto
-					heroVideo.addEventListener('loadeddata', function() {
-						forcePlayVideo();
-					});
-					
-					// Forza il play quando il video è completamente caricato
-					heroVideo.addEventListener('canplay', function() {
-						forcePlayVideo();
-					});
-					
-					// Gestione visibilità pagina - riavvia il video quando la tab diventa attiva
-					document.addEventListener('visibilitychange', function() {
-						if (!document.hidden && heroVideo.paused) {
-							forcePlayVideo();
-						}
-					});
-					
-					// Touch/Click fallback per mobile (alcuni browser richiedono interazione utente)
-					let userInteracted = false;
-					function handleUserInteraction() {
-						if (!userInteracted && heroVideo.paused) {
-							userInteracted = true;
-							forcePlayVideo();
-						}
-					}
-					
-					document.addEventListener('touchstart', handleUserInteraction, { once: true, passive: true });
-					document.addEventListener('click', handleUserInteraction, { once: true });
-					
-					// Controllo periodico per assicurarsi che il video sia sempre in play
-					setInterval(function() {
-						if (heroVideo.paused && !document.hidden) {
-							forcePlayVideo();
-						}
-					}, 3000); // Controlla ogni 3 secondi
-				}
-			});
-		</script>
+		<!-- FIX: Script Video Hero spostato in file esterno -->
+		<script src="video-hero-autoplay.js"></script>
 
 		<!-- Script per Gallery Tabs Filtering -->
 		<script>
@@ -664,7 +643,6 @@
 				});
 			});
 		</script>
-
 
 	</body>
 </html>
