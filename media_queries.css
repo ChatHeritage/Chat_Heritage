@@ -1,1141 +1,515 @@
 /* ================================================================
-   CHAT HERITAGE - MEDIA QUERIES OTTIMIZZATE (MOBILE-FIRST)
-   AGGIORNATO CON CONTENT-SHOWCASE E RIMOSSA VECCHIA CTA
+   CHAT HERITAGE - MEDIA QUERIES OTTIMIZZATE
    ================================================================ */
 
-/* ================================================================================================================================================================================================
+/* ================================================================
    1. MOBILE EXTRA SMALL (320px - 374px)
-   ================================================================================================================================================================================================ */
+   ================================================================ */
 
-   @media screen and (max-width: 374px) {
+@media screen and (max-width: 374px) {
     .container {
         padding: 0 0.75rem;
     }
-    
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .footer-social h3 {
+        font-size: 1.2rem;
+    }
+
     .hero {
         padding: 100px 0.75rem 50px;
     }
-    
-    /* Video Hero Mobile XS */
+
     .hero-video {
         min-height: 100vh;
         object-position: center center;
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 100%);
     }
-    
+
     .hero-title {
         font-size: clamp(1.8rem, 8vw, 2.2rem);
         line-height: 1.1;
         white-space: normal;
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1rem, 5vw, 1.2rem);
     }
-    
+
     .hero-cta {
         font-size: 0.85rem;
         padding: 0.8rem 1.5rem;
         min-width: 180px;
     }
-    
+
     .nav-container {
         padding: 0 0.75rem;
     }
-    
+
     .dropdown button {
         min-width: 100px;
         padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
     }
-    
-    .content-title {
+
+    .content-title,
+    .section-title,
+    .about-text h3,
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
         font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
-    
+
+    .hero-title {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
+    }
+
+    .gallery-info h3 {
+        color: white;
+    }
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
+    }
+
+    .hero-subtitle {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        line-height: 1.7;
+    }
+
+    .gallery-info p {
+        color: white;
+    }
+
     .content-section {
         margin-bottom: 50px;
     }
-    
-    /* Content Showcase Extra Small */
-    .content-showcase {
-        padding: 2rem 0;
-        min-height: 400px;
-    }
-    
-    .content-showcase__text {
-        padding: 1rem 0.75rem;
-    }
-    
-    .content-showcase__title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .content-showcase__cta {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.85rem;
-    }
-    
-    .content-showcase__image {
-        min-height: 300px;
-    }
-}
 
-/* ================================================================================================================================================================================================
-   2. MOBILE SMALL (375px - 479px) 
-   ================================================================================================================================================================================================ */
+    .image-container {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
 
-@media screen and (min-width: 375px) and (max-width: 479px) {
-    /* Video Hero Mobile Small */
-    .hero-video {
-        object-position: center center;
+    .placeholder-image {
+        width: 100%;
+        height: auto;
     }
-    
-    .hero-title {
-        font-size: clamp(2rem, 7vw, 2.4rem);
-    }
-    
-    .hero-subtitle {
-        font-size: clamp(1.1rem, 4vw, 1.3rem);
-    }
-    
-    .content-title {
-        font-size: clamp(1.9rem, 6vw, 2.1rem);
-    }
-    
-    .step-badge {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
-    }
-    
-    .feature-list li {
-        font-size: 1.05rem;
-    }
-    
-    .content-block {
-        padding: 0 0.5rem;
-    }
-    
-    /* Content Showcase Small */
-    .content-showcase {
-        padding: 2.5rem 0;
-        min-height: 450px;
-    }
-    
-    .content-showcase__text {
-        padding: 1.5rem 1rem;
-    }
-    
-    .content-showcase__title {
-        font-size: 1.6rem;
-    }
-    
-    .content-showcase__cta {
-        padding: 0.9rem 2rem;
-        font-size: 0.9rem;
-    }
-    
-    .content-showcase__image {
-        min-height: 350px;
+
+    .placeholder-image img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 }
 
 /* ================================================================
-   3. MOBILE STANDARD (480px) - MANTIENE CODICE ORIGINALE + CONTENT SHOWCASE
+   2. MOBILE SMALL (375px - 479px)
+   ================================================================ */
+
+@media screen and (min-width: 375px) and (max-width: 479px) {
+    .hero-video {
+        object-position: center center;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 7vw, 2.4rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.1rem, 4vw, 1.3rem);
+    }
+
+    .content-title,
+    .section-title,
+    .about-text h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(1.9rem, 6vw, 2.1rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
+    }
+
+    .hero-title {
+        font-family: 'Nunito', sans-serif;
+        color: white;
+    }
+
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(1.9rem, 6vw, 2.1rem);
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
+    }
+
+    .step-badge {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
+    }
+
+    .hero-subtitle {
+        font-family: 'Nunito', sans-serif;
+        color: white;
+    }
+
+    .gallery-info p {
+        color: white;
+    }
+
+    .content-block {
+        padding: 0 0.5rem;
+    }
+
+    .image-container {
+        max-width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .placeholder-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .placeholder-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+/* ================================================================
+   3. MOBILE STANDARD (480px)
    ================================================================ */
 
 @media screen and (max-width: 480px) {
-    /* ================================================================
-       BASE CONTAINER E LAYOUT FUNDAMENTALS
-       ================================================================ */
-    
     .container {
         padding: 0 1rem;
-        /* Performance optimization */
-        contain: layout style;
-        will-change: auto; /* Reset will-change when not animating */
-    }
-
-    .testimonial-card {
-        padding: 2rem;
-        /* Touch optimization */
-        touch-action: manipulation;
-        /* Performance */
-        contain: layout style paint;
-        backface-visibility: hidden;
     }
 
     .nav-menu li {
         margin-right: 1.5rem;
-        /* Touch target compliance */
         min-height: 44px;
         display: flex;
         align-items: center;
     }
 
-    /* ================================================================
-       HERO SECTION - ENTERPRISE OPTIMIZATIONS
-       ================================================================ */
-    
-    /* Video Hero Mobile Standard */
+    .social-icons {
+        gap: 1.2rem;
+    }
+
+    .social-icons a {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+        min-height: 48px;
+        min-width: 48px;
+    }
+
     .hero {
         min-height: 100vh;
     }
-    
+
     .hero-video-container {
         width: 100%;
         height: 100%;
     }
-    
+
     .hero-video {
         min-width: 100%;
         min-height: 100vh;
         object-fit: cover;
         object-position: center center;
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 100%);
     }
-    
+
     .hero-content {
         margin-bottom: clamp(-60vh, -35vh, -25vh);
-        /* Typography optimization */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1, "liga" 1;
-        /* Layout containment */
-        contain: layout style;
     }
 
     .hero-title {
-        font-size: clamp(2.2rem, 6vh, 7rem); /* Ottimizzato per migliore adattamento vh */
-        max-width: 100%; /* Cambiato da 480px a 100% per utilizzare tutto lo spazio disponibile */
-        /* Enterprise typography enhancements */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-        word-break: break-word; /* Evita overflow su parole lunghe */
-        overflow-wrap: break-word; /* Fallback per browser meno recenti */
-        hyphens: auto; /* Sillabazione automatica se supportata */
+        font-size: clamp(2.2rem, 6vh, 7rem);
+        max-width: 100%;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
-        /* Performance optimizations */
-        contain: layout style;
-        transform: translateZ(0); /* Hardware acceleration */
-        will-change: transform; /* Ottimizza per animazioni */
-        backface-visibility: hidden; /* Evita flickering */
     }
-
-    /* .hero-leoimg rimosso - sostituito da video hero */
 
     .hero-cta {
         font-size: 0.95rem;
         padding: 0.9rem 2rem;
         width: fit-content;
         min-width: 200px;
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-        /* Enterprise UX optimizations */
-        min-height: 44px; /* Apple/Google touch target minimum */
-        touch-action: manipulation; /* Evita double-tap zoom */
-        cursor: pointer; /* Esplicito per tutti i dispositivi */
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); /* Tap feedback iOS */
-        /* Performance */
-        contain: layout style;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        /* Accessibility */
-        outline-offset: 2px;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .hero-cta::before {
-        font-size: 1.1rem;
-        /* Performance optimization */
-        will-change: auto;
-        backface-visibility: hidden;
+        min-height: 44px;
+        touch-action: manipulation;
     }
 
-    /* ================================================================
-       CONTENT SECTIONS - LAYOUT OPTIMIZATIONS
-       ================================================================ */
-    
     .content-block {
         padding: 0;
-        /* Layout performance */
-        contain: layout style;
-        /* Typography optimization */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1, "liga" 1;
     }
 
-    /* ================================================================
-       CAROUSEL CARDS SECTION - ENTERPRISE TOUCH & PERFORMANCE
-       ================================================================ */
-    
-    .itineraries {
-        padding: 80px 0;
-        /* Performance containment */
-        contain: layout style;
-        /* Scroll performance */
-        overflow: hidden;
-    }
-    
-    .itineraries .section-title {
-        font-size: clamp(2rem, 8vw, 2.5rem);
-        margin-bottom: 0.8rem;
-        /* Typography optimization */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1, "liga" 1;
-        /* Performance */
-        contain: layout style;
-    }
-    
-    .itineraries .section-subtitle {
-        padding: 0 1rem;
-        /* Enterprise UX improvements */
-        text-align: center; /* Esplicito per sicurezza */
-        max-width: 100%; /* Evita overflow */
-        word-wrap: break-word; /* Wrapping sicuro */
-        overflow-wrap: break-word; /* Fallback */
-        hyphens: auto; /* Sillabazione se necessaria */
-        -webkit-hyphens: auto;
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-    }
-    
-    .itineraries .section-header {
-        margin-bottom: 2.5rem;
-        /* Performance */
-        contain: layout style;
-    }
-
-    /* ================================================================
-       MOBILE DRAG CAROUSEL - ENTERPRISE TOUCH EXPERIENCE
-       ================================================================ */
-    
-    .itineraries-grid {
-        gap: 1.5rem;
-        padding: 1.5rem 0 2rem 1rem;
-        margin-right: -1rem;
-        /* Migliore responsività touch - COMPORTAMENTO ORIGINALE */
-        touch-action: pan-x;
-        -webkit-overflow-scrolling: touch;
-        /* Performance optimizations mantenendo scroll naturale */
-        contain: layout style;
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        /* Nasconde scrollbar mantenendo scroll fluido */
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        /* SNAP SCROLL PER MOBILE */
-        scroll-snap-type: x mandatory;
-        scroll-padding: 0 1rem;
-    }
-
-    /* Nasconde scrollbar WebKit */
-    .itineraries-grid::-webkit-scrollbar {
-        display: none;
-        width: 0;
-        height: 0;
-    }
-
-    /* ================================================================
-       MOBILE CARDS - ENTERPRISE PERFORMANCE & UX
-       ================================================================ */
-    
-    .itinerary-card {
-        flex: 0 0 280px;
-        border-radius: 20px;
-        /* Enterprise performance optimizations - SCROLL NATURALE */
-        transform: translateZ(0);
-        will-change: transform;
-        contain: layout style paint;
-        backface-visibility: hidden;
-        /* Touch optimization */
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-        /* Layout stability */
-        contain-intrinsic-size: 280px 400px;
-        content-visibility: auto;
-        /* Performance transition */
-        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        /* SNAP SCROLL PER MOBILE */
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
-    
-    .itinerary-card:hover {
-        transform: translateY(-4px) scale(1.01);
-        /* Ensure smooth animation */
-        will-change: transform;
-    }
-    
-    .itinerary-image {
-        height: 180px;
-        /* Enterprise image optimizations */
-        object-fit: cover;
-        object-position: center;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        /* Performance */
-        contain: layout style paint;
-        backface-visibility: hidden;
-        /* Loading optimization */
-        loading: lazy; /* Native lazy loading hint */
-        decoding: async; /* Async image decoding */
-        /* Layout stability */
-        contain-intrinsic-size: 280px 180px;
-    }
-    
-    .itinerary-title {
-        font-size: clamp(1.2rem, 5vw, 1.4rem);
-        margin: 1.2rem auto 0.8rem auto;
-        text-align: center;
-        background-color: rgba(127, 255, 212, 0);
-        border-radius: 5px;
-        /* Enterprise typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1, "liga" 1;
-        word-break: break-word; /* Evita overflow */
-        overflow-wrap: break-word;
-        hyphens: auto;
-        -webkit-hyphens: auto;
-        /* Performance */
-        contain: layout style;
-    }
-    
-    .itinerary-description {
-        font-size: clamp(1rem, 3.5vw, 1.2rem);
-        margin: 1rem auto 1.5rem auto;
-        line-height: 1.5;
-        text-align: center;
-        background-color: rgba(127, 255, 212, 0);
-        /* Enterprise typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-        -webkit-hyphens: auto;
-        /* Performance */
-        contain: layout style;
-    }
-    
-    .itinerary-button {
-        font-size: clamp(0.9rem, 3.5vw, 1rem);
-        padding: 0.75rem 1.5rem;
-        margin: 0 auto 1.5rem auto;
-        border-radius: 10px;
-        display: block;
-        width: fit-content;
-        /* Enterprise UX optimizations */
-        min-height: 44px; /* Touch compliance */
-        touch-action: manipulation;
-        cursor: pointer;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-        -webkit-appearance: none;
-        appearance: none;
-        /* Performance */
-        contain: layout style;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        /* Accessibility */
-        outline-offset: 2px;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        /* Prevent text selection */
-        user-select: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-    }
-
-    /* ================================================================
-       MOBILE DRAG INDICATOR - ENTERPRISE UX
-       ================================================================ */
-    
-    .itineraries-grid::after {
-        bottom: 0.5rem;
-        right: 1rem;
-        font-size: 0.8rem;
-        /* Enterprise UX improvements */
-        pointer-events: none; /* Non interferisce con touch */
-        user-select: none; /* Non selezionabile */
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        opacity: 0.8; /* Più sottile */
-        animation: fadeInOut 3s infinite; /* Richiama attenzione */
-        /* Performance */
-        contain: layout style;
-        will-change: opacity;
-        transform: translateZ(0);
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        /* Positioning stability */
-        position: absolute;
-        z-index: 1;
-    }
-
-    /* ================================================================
-       FORM SECTION - ENTERPRISE UX & ACCESSIBILITY
-       ================================================================ */
-    
-    .form-section {
-        padding: 60px 0rem;
-        /* Performance */
-        contain: layout style;
-    }
-    
-    .form-content {
+    .image-container {
         max-width: 100%;
-        padding: 2rem 1.5rem;
-        margin: 0 1rem;
-        border-radius: 16px;
-        /* Performance */
-        contain: layout style;
-        backface-visibility: hidden;
-    }
-    
-    .form-title {
-        font-size: clamp(2rem, 8vw, 2rem);
-        margin-bottom: 0.8rem;
-        /* Typography optimization */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1, "liga" 1;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        /* Performance */
-        contain: layout style;
-    }
-    
-    .form-description {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-        margin-bottom: 1.5rem;
-        /* Typography optimization */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        line-height: 1.6; /* Migliore leggibilità */
-        /* Performance */
-        contain: layout style;
-    }
-    
-    .form-section form {
-        gap: 1.2rem;
-        /* Performance */
-        contain: layout style;
+        margin-bottom: 2rem;
     }
 
-    /* ================================================================
-       FORM INPUTS - ENTERPRISE ACCESSIBILITY & UX
-       ================================================================ */
-    
-    .form-section input[type="text"],
-    .form-section input[type="email"] {
-        padding: 0.9rem 1rem;
-        font-size: 0.95rem;
-        /* Enterprise UX enhancements */
-        border-radius: 12px; /* Consistency con design */
-        -webkit-appearance: none; /* Remove iOS styling */
-        appearance: none;
-        border: 2px solid transparent; /* Spazio per focus ring */
-        outline: none;
-        /* Touch optimization */
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-        /* Performance */
-        contain: layout style;
-        backface-visibility: hidden;
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        /* Transition */
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        /* Accessibility */
-        min-height: 44px; /* Touch target minimum */
-    }
-
-    /* Enhanced focus states */
-    .form-section input[type="text"]:focus,
-    .form-section input[type="email"]:focus {
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        transform: translateZ(0); /* Ensure crisp rendering */
-    }
-
-    /* Placeholder enhancement */
-    .form-section input[type="text"]::placeholder,
-    .form-section input[type="email"]::placeholder {
-        opacity: 0.7;
-        transition: opacity 0.2s ease;
-    }
-
-    .form-section input[type="text"]:focus::placeholder,
-    .form-section input[type="email"]:focus::placeholder {
-        opacity: 0.5;
-    }
-
-    .form-section button[type="submit"] {
-        padding: 0.9rem;
-        font-size: 0.95rem;
-        /* Enterprise UX optimizations */
-        min-height: 44px; /* Touch compliance */
-        cursor: pointer; /* Esplicito */
-        -webkit-appearance: none;
-        appearance: none;
-        border: none;
-        border-radius: 12px;
-        /* Touch optimization */
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-        /* Performance */
-        contain: layout style;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        /* Transition */
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        /* Accessibility */
-        outline-offset: 2px;
-        /* Prevent text selection */
-        user-select: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-    }
-
-    /* Enhanced button states */
-    .form-section button[type="submit"]:hover {
-        transform: translateY(-1px) translateZ(0);
-    }
-
-    .form-section button[type="submit"]:active {
-        transform: translateY(0) translateZ(0);
-        transition-duration: 0.1s;
-    }
-
-    .form-section button[type="submit"]:focus-visible {
-        outline: 2px solid #3b82f6;
-        outline-offset: 2px;
-    }
-
-    /* ================================================================
-       CONTENT SHOWCASE - MOBILE OTTIMIZZATO (480px) - SPECIFICITÀ AUMENTATA
-       ================================================================ */
-    
-    .content-showcase {
-        position: relative !important;
-        /* Layout mobile-first con specificità maggiore */
-        display: grid !important;
-        grid-template-columns: 1fr !important; /* Single column su mobile */
-        gap: 0 !important; /* Rimuove gap per mobile */
-        padding: 3rem 0 !important; /* Padding verticale ottimizzato */
-        min-height: calc(100vh - 70px) !important;
-        /* Performance containment */
-        contain: layout style;
-        overflow: hidden; /* Evita scroll orizzontale */
-        /* Background ottimizzato per mobile */
-        background-attachment: scroll; /* Migliore performance su mobile */
-        background-size: cover;
-        /* Hardware acceleration */
-        transform: translateZ(0);
-        will-change: transform;
-        /* Assicura layout centrato verticalmente */
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .content-showcase .content-showcase__text {
-        z-index: 10 !important;
-        /* Padding ottimizzato per mobile */
-        padding: 2rem 1rem !important;
-        /* Order per mobile - testo prima */
-        order: 1 !important;
-        /* CENTRATURA PERFETTA */
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        /* Performance */
-        contain: layout style;
-        /* Animation optimization */
-        animation: slideInUp 0.6s ease-out 0.1s forwards;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    
-    .content-showcase .content-showcase__inner {
-        /* CENTRATURA PERFETTA DEL CONTENUTO */
-        text-align: center !important;
-        margin: 0 auto !important;
-        max-width: 90% !important; /* Margini laterali per leggibilità */
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        /* Spaziatura interna ottimizzata */
-        padding: 1rem !important;
-    }
-    
-    .content-showcase .content-showcase__title {
-        /* Typography ottimizzata per mobile */
-        font-size: clamp(2rem, 8vw, 2.5rem) !important;
-        color: var(--white) !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1.5rem !important; /* Spacing aumentato per migliore leggibilità */
-        /* Rimuovi animazioni complesse su mobile */
-        animation: none !important;
-        border: none !important;
-        white-space: normal !important; /* Permetti wrapping */
-        overflow: visible !important;
-        /* Performance typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1, "liga" 1;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-        -webkit-hyphens: auto;
-        /* Performance */
-        contain: layout style;
-        /* CENTRATURA PERFETTA */
-        width: 100% !important;
-        text-align: center !important;
-    }
-    
-    .content-showcase .content-showcase__description {
-        /* MOSTRA SEMPRE LA DESCRIZIONE SU MOBILE CENTRATA */
-        display: block !important;
-        font-size: clamp(1rem, 5vw, 2rem) !important;
-        line-height: 1.6 !important;
-        margin: 0 auto 2rem auto !important; /* Spacing aumentato */
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        /* Performance */
-        contain: layout style;
-        /* CENTRATURA PERFETTA */
-        width: 100% !important;
-        text-align: center !important;
-        max-width: 100% !important; /* Limita larghezza per leggibilità */
-        color: var(--white) !important;
-    }
-    
-    .content-showcase__cta {
-        font-size: 0.95rem;
-        padding: 0.9rem 2rem;
-        width: fit-content;
-        min-width: 200px;
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-        /* Enterprise UX optimizations */
-        min-height: 44px; /* Apple/Google touch target minimum */
-        touch-action: manipulation; /* Evita double-tap zoom */
-        cursor: pointer; /* Esplicito per tutti i dispositivi */
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); /* Tap feedback iOS */
-        /* Performance */
-        contain: layout style;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-        /* Typography */
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "kern" 1;
-        /* Accessibility */
-        outline-offset: 2px;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .content-showcase__cta::before {
-        font-size: 1.1rem;
-        /* Performance optimization */
-        will-change: auto;
-        backface-visibility: hidden;
-    }
-    
-    .content-showcase .content-showcase__image {
-        /* VIDEO COME SFONDO */
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        z-index: 1 !important;
-        pointer-events: none !important;
-    }
-
-    /* OVERLAY FILTRO COLORATO REGOLABILE */
-    .content-showcase .content-showcase__image::before {
-        content: '' !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        z-index: 2 !important; /* Sopra il video, sotto il testo */
-        pointer-events: none !important;
-        
-        /* FILTRO REGOLABILE - MODIFICA QUESTI VALORI */
-        background: rgba(0, 0, 0, 0.5) !important; /* Nero semi-trasparente */
-        
-        /* O GRADIENT COLORATO: */
-        /* background: linear-gradient(45deg, rgba(142, 94, 220, 0.4) 0%, rgba(64, 141, 170, 0.4) 50%, rgba(2, 190, 101, 0.3) 100%) !important; */
-    }
-    
-    .content-showcase__image video {
-        /* Video ottimizzato per mobile */
+    .placeholder-image {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        /* Performance video */
-        will-change: auto; /* Reset will-change quando non in hover */
-        transform: translateZ(0);
-        /* Image optimization */
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        /* Remove complex filters on mobile */
-        filter: none;
-        /* Touch optimization */
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
+        height: auto;
     }
-    
-    /* Simplified hover per mobile/touch */
-    .content-showcase__image:hover video {
-        transform: none; /* No scale su mobile */
-        filter: none; /* No filter changes */
-    }
-    
-    /* Simplified overlay per mobile */
-    .content-showcase__image::after {
-        /* Overlay più sottile su mobile */
-        background: linear-gradient(45deg, rgba(142, 94, 220, 0.05) 0%, rgba(64, 141, 170, 0.05) 50%, rgba(2, 190, 101, 0.05) 100%);
-        opacity: 0.5; /* Sempre visibile ma sottile */
-        transition: none; /* No animation */
-    }
-    
-    .content-showcase__image:hover::after {
-        opacity: 0.5; /* Nessun cambiamento su hover mobile */
+
+    .placeholder-image img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 }
 
 /* ================================================================
-   ENHANCED KEYFRAMES FOR MOBILE
-   ================================================================ */
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px) translateZ(0);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) translateZ(0);
-    }
-}
-
-@keyframes fadeInOut {
-    0%, 100% { 
-        opacity: 0.8; 
-        transform: translateZ(0) scale(1);
-    }
-    50% { 
-        opacity: 0.4;
-        transform: translateZ(0) scale(0.98);
-    }
-}
-
-/* ================================================================
-   ENTERPRISE-LEVEL PERFORMANCE HINTS
-   ================================================================ */
-
-/* Critical resource hints for mobile */
-@media screen and (max-width: 480px) {
-    /* GPU layer hints for smooth scrolling */
-    .itineraries-grid,
-    .itinerary-card,
-    .hero-leoimg,
-    .hero-cta,
-    .content-showcase,
-    .content-showcase__image video {
-        transform: translateZ(0);
-        will-change: transform;
-    }
-    
-    /* Layout containment for performance */
-    .container,
-    .content-section,
-    .itineraries,
-    .form-section,
-    .content-showcase {
-        contain: layout style;
-    }
-    
-    /* Paint containment for complex elements */
-    .itinerary-card,
-    .hero-leoimg,
-    .form-content,
-    .content-showcase__image {
-        contain: layout style paint;
-    }
-}
-
-/* ================================================================================================================================================================================================
    4. MOBILE LARGE (481px - 599px)
-   ================================================================================================================================================================================================ */
+   ================================================================ */
 
 @media screen and (min-width: 481px) and (max-width: 599px) {
     .container {
         padding: 0 1.5rem;
     }
-    
+
     .hero {
         padding: 120px 1.5rem 60px;
     }
-    
-    /* Video Hero Tablet XSmall */
+
     .hero-video {
         object-position: center center;
     }
-    
+
     .hero-title {
         font-size: clamp(2.4rem, 5vw, 2.8rem);
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1.3rem, 3.5vw, 1.5rem);
     }
-    
+
     .hero-cta {
         font-size: 1rem;
         padding: 1rem 2.2rem;
     }
-    
+
     .main-content {
         padding: 85px 0 65px;
     }
-    
+
     .content-section {
         margin-bottom: 65px;
     }
-    
-    .content-title {
+
+    .content-title,
+    .section-title,
+    .about-text h3 {
+        font-family: 'Nunito', sans-serif;
         font-size: clamp(2.1rem, 4vw, 2.4rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
-    
-    .content-description {
+
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(2.1rem, 4vw, 2.4rem);
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
+    }
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
         font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
     }
-    
+
+    .gallery-info p {
+        color: white;
+    }
+
     .image-container {
         margin-bottom: 2.5rem;
     }
-    
-    /* Itinerari ottimizzati */
-    .itineraries {
-        padding: 90px 0;
+
+    .placeholder-image {
+        width: 100%;
+        height: auto;
     }
-    
-    .itineraries .section-title {
-        font-size: clamp(2.3rem, 5vw, 2.6rem);
-    }
-    
-    .itineraries .section-subtitle {
-        font-size: clamp(1.1rem, 3vw, 1.3rem);
-        padding: 0 1.5rem;
-    }
-    
-    .itineraries-grid {
-        gap: 1.8rem;
-        padding: 1.8rem 0 2.5rem 1.5rem;
-    }
-    
-    .itinerary-card {
-        flex: 0 0 320px;
-    }
-    
-    .itinerary-image {
-        height: 200px;
-    }
-    
-    /* Form ottimizzato */
-    .form-content {
-        max-width: 90%;
-        margin: 0 auto;
-        padding: 2.2rem;
-    }
-    
-    .form-title {
-        font-size: clamp(2.1rem, 5vw, 2.3rem);
-    }
-    
-    .form-description {
-        font-size: clamp(1.1rem, 3vw, 1.3rem);
-    }
-    
-    .form-section input[type="text"],
-    .form-section input[type="email"] {
-        padding: 0.95rem 1.1rem;
-        font-size: 1rem;
-    }
-    
-    /* Content Showcase Mobile Large */
-    .content-showcase {
-        padding: 3.5rem 0;
-        min-height: 550px;
-    }
-    
-    .content-showcase__text {
-        padding: 2rem 1.5rem;
-    }
-    
-    .content-showcase__title {
-        font-size: clamp(1.9rem, 4vw, 2.3rem);
-    }
-    
-    .content-showcase__description {
+
+    .placeholder-image img {
+        width: 100%;
+        height: auto;
         display: block;
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .content-showcase__cta {
-        padding: 1rem 2.5rem;
-        font-size: 0.95rem;
-    }
-    
-    .content-showcase__image {
-        min-height: 350px;
     }
 }
 
-/* ================================================================================================================================================================================================
+/* ================================================================
    5. TABLET PORTRAIT (600px - 767px)
-   ================================================================================================================================================================================================ */
+   ================================================================ */
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
     .container {
         padding: 0 2rem;
     }
-    
+
     .hero {
         padding: 130px 2rem 70px;
     }
-    
-    /* Video Hero Tablet Portrait */
+
     .hero-video {
         object-position: center 40%;
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 100%);
     }
-    
+
     .hero-title {
         font-size: clamp(2.8rem, 4vw, 3.2rem);
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1.4rem, 2.5vw, 1.6rem);
     }
-    
+
     .nav-container {
         padding: 0 2rem;
     }
-    
+
     .main-content {
         padding: 90px 0 70px;
     }
-    
+
     .content-section {
         margin-bottom: 75px;
     }
-    
-    .content-title {
+
+    .content-title,
+    .section-title,
+    .about-text h3 {
+        font-family: 'Nunito', sans-serif;
         font-size: clamp(2.3rem, 3.5vw, 2.6rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
-    
+
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(2.3rem, 3.5vw, 2.6rem);
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
+    }
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
+    }
+
+    .gallery-info p {
+        color: white;
+    }
+
     .image-container {
         max-width: 80%;
         margin: 0 auto 3rem auto;
     }
-    
-    /* Itinerari tablet portrait */
-    .itineraries {
-        padding: 100px 0;
+
+    .placeholder-image {
+        width: 100%;
+        height: auto;
     }
-    
-    .itineraries-grid {
-        gap: 2rem;
-        padding: 2rem 0 3rem 2rem;
-    }
-    
-    .itinerary-card {
-        flex: 0 0 340px;
-    }
-    
-    .itinerary-image {
-        height: 220px;
-    }
-    
-    /* Form tablet portrait */
-    .form-content {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 2.5rem;
-    }
-    
-    .form-title {
-        font-size: clamp(2.3rem, 3vw, 2.5rem);
-    }
-    
-    /* Content Showcase Tablet Portrait */
-    .content-showcase {
-        padding: 4rem 0;
-        min-height: 600px;
-    }
-    
-    .content-showcase__text {
-        padding: 2.5rem 2rem;
-    }
-    
-    .content-showcase__title {
-        font-size: clamp(2.1rem, 3vw, 2.5rem);
-    }
-    
-    .content-showcase__description {
+
+    .placeholder-image img {
+        width: 100%;
+        height: auto;
         display: block;
-        font-size: 1.1rem;
-    }
-    
-    .content-showcase__cta {
-        padding: 1.1rem 2.8rem;
-        font-size: 1rem;
-    }
-    
-    .content-showcase__image {
-        min-height: 400px;
     }
 }
 
-/* ================================================================================================================================================================================================
-   6. TABLET LANDSCAPE (768px - 1023px)
-   ================================================================================================================================================================================================ */
+/* ================================================================
+   6. TABLET LANDSCAPE (768px)
+   ================================================================ */
 
 @media screen and (max-width: 768px) {
     .hero {
@@ -1150,12 +524,46 @@
         font-size: 1.2rem;
     }
 
-    .content-title {
+    .content-title,
+    .section-title,
+    .about-text h3 {
+        font-family: 'Nunito', sans-serif;
         font-size: 2rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
 
     .section-title {
         font-size: 2.2rem;
+    }
+
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
+    }
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
+    }
+
+    .gallery-info p {
+        color: white;
     }
 
     .nav-container {
@@ -1178,224 +586,135 @@
     .placeholder-image {
         height: auto;
     }
-    
-    /* Content Showcase 768px */
-    .content-showcase {
-        padding: 3rem 0;
-        min-height: 500px;
-    }
-    
-    .content-showcase__title {
-        font-size: 2rem;
-    }
-    
-    .content-showcase__text {
-        padding: 2rem 1rem;
-    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {
-    /* Navigation mobile per tablet landscape */
-    .nav-menu {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-        display: -ms-flexbox;
-        -ms-flex-direction: column;
-        visibility: visible;
-    }
-    
-    /* Header spacing per tablet landscape */
     .nav-container {
         padding: 0 2.5rem;
     }
-    
+
     .hero {
         padding: 130px 2.5rem 80px;
     }
-    
-    /* Video Hero Tablet Landscape */
+
     .hero-video {
         object-position: center 35%;
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 100%);
     }
-    
+
     .hero-title {
         font-size: clamp(3.2rem, 3.5vw, 3.8rem);
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1.5rem, 2vw, 1.7rem);
     }
-    
+
     .main-content {
         padding: 100px 0 80px;
     }
-    
+
     .content-section {
         margin-bottom: 85px;
     }
-    
-    .content-title {
+
+    .content-title,
+    .about-text h3 {
+        font-family: 'Nunito', sans-serif;
         font-size: clamp(2.4rem, 3vw, 2.8rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
-    
+
     .section-title {
+        font-family: 'Nunito', sans-serif;
         font-size: clamp(2.6rem, 2.8vw, 3rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
-    
-    /* Itinerari tablet landscape - mantiene carousel */
-    .itineraries-grid {
-        gap: 2.5rem;
-        padding: 2.5rem 0 3rem 2.5rem;
+
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(2.4rem, 3vw, 2.8rem);
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
     }
-    
-    .itinerary-card {
-        flex: 0 0 360px;
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
     }
-    
-    .itinerary-image {
-        height: 240px;
-    }
-    
-    /* Form tablet landscape */
-    .form-content {
-        max-width: 550px;
-        margin: 0 auto;
-        padding: 2.8rem;
-    }
-    
-    /* Content Showcase Tablet Landscape */
-    .content-showcase {
-        padding: 5rem 0;
-        min-height: 650px;
-        /* Inizia a usare layout a due colonne */
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-    
-    .content-showcase__text {
-        padding: 3rem 2.5rem;
-        order: 1;
-    }
-    
-    .content-showcase__inner {
-        text-align: left;
-        margin: 0;
-    }
-    
-    .content-showcase__title {
-        font-size: clamp(2.4rem, 2.5vw, 2.8rem);
-        animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
-        border-right: 3px solid var(--primary-gradient);
-        white-space: nowrap;
-    }
-    
-    .content-showcase__description {
-        display: block;
-        font-size: 1.1rem;
-        animation: fadeInUp 0.8s ease-out 0.6s forwards;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    
-    .content-showcase__cta {
-        animation: fadeInUp 0.8s ease-out 1s forwards;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    
-    .content-showcase__image {
-        order: 2;
-        min-height: 500px;
-        border-radius: 30px 0 0 0;
-        animation: slideInRight 0.8s ease-out 0.4s forwards;
-        opacity: 0;
-        transform: translateX(30px);
+
+    .gallery-info p {
+        color: white;
     }
 }
 
-/* ================================================================================================================================================================================================
-   7. DESKTOP SMALL (1024px+) - OTTIMIZZATO
-   ================================================================================================================================================================================================ */
-
-@media screen and (max-width: 1024px) {
-    .nav-menu {
-        display: none;
-    }
-
-    .mobile-menu-btn {
-        display: flex;
-        display: -ms-flexbox;
-        -ms-flex-direction: column;
-    }
-
-    .testimonials-grid {
-        display: block;
-    }
-
-    .testimonial-card {
-        margin-bottom: 2.5rem;
-    }
-
-    .content-section {
-        margin-bottom: 80px;
-    }
-}
+/* ================================================================
+   7. DESKTOP SMALL (1024px+)
+   ================================================================ */
 
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
     .container {
         max-width: 1200px;
         padding: 0 2.5rem;
     }
-    
-    /* Ripristina navigation desktop */
-    .nav-menu {
-        display: flex;
-        display: -ms-flexbox;
-        -ms-flex-direction: row;
-    }
-    
-    .mobile-menu-btn {
-        display: none;
-        visibility: hidden;
-    }
-    
-    /* Header spacing per desktop small */
+
     .nav-container {
         padding: 0 2.5rem;
     }
-    
+
+    .social-icons a {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+    }
+
+    .social-icons {
+        gap: 2rem;
+    }
+
     .hero {
         padding: 140px 2.5rem 90px;
     }
-    
-    /* Video Hero Desktop Small */
+
     .hero-video {
         object-position: center 32%;
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 100%);
     }
-    
+
     .hero-title {
         font-size: clamp(3.8rem, 3vw, 4.2rem);
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1.6rem, 1.5vw, 1.8rem);
     }
-    
+
     .main-content {
         padding: 110px 0 90px;
     }
-    
+
     .content-section {
         margin-bottom: 100px;
         display: flex;
@@ -1404,250 +723,190 @@
         align-items: center;
         gap: 4rem;
     }
-    
+
     .content-section.slide-in-right {
         flex-direction: row-reverse;
     }
-    
+
     .image-container {
         flex: 0 0 45%;
         margin-bottom: 0;
         max-width: none;
     }
-    
+
     .content-block {
         flex: 1;
         max-width: none;
         padding: 0;
     }
-    
-    .content-title {
+
+    .content-title,
+    .section-title,
+    .about-text h3 {
+        font-family: 'Nunito', sans-serif;
         font-size: clamp(2.6rem, 2.2vw, 3rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
-    
-    /* Desktop grid per itinerari */
-    .itineraries {
-        padding: 130px 0;
+
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(2.6rem, 2.2vw, 3rem);
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
     }
-    
-    .itineraries-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2.5rem;
-        overflow: visible;
-        padding: 3rem 0;
-        cursor: default;
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
     }
-    
-    .itinerary-card {
-        flex: none;
-    }
-    
-    .itinerary-card:hover {
-        transform: translateY(-8px) scale(1.02);
-    }
-    
-    .itinerary-image {
-        height: auto;
-    }
-    
-    /* Nasconde drag indicator su desktop */
-    .itineraries-grid::after {
-        display: none;
-    }
-    
-    .form-content {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 3rem;
-    }
-    
-    /* Content Showcase Desktop Small */
-    .content-showcase {
-        padding: 6rem 0;
-        min-height: 700px;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
-    
-    .content-showcase__text {
-        padding: 4rem 3rem;
-    }
-    
-    .content-showcase__title {
-        font-size: clamp(2.6rem, 2vw, 3rem);
-    }
-    
-    .content-showcase__image {
-        min-height: 600px;
-        border-radius: 60px 0 0 0;
-    }
-    
-    .content-showcase__image:hover video {
-        transform: scale(1.05);
-        filter: brightness(1) contrast(1.1);
-    }
-    
-    .content-showcase__image:hover::after {
-        opacity: 1;
+
+    .gallery-info p {
+        color: white;
     }
 }
 
-/* ================================================================================================================================================================================================
+/* ================================================================
    8. DESKTOP LARGE (1200px+)
-   ================================================================================================================================================================================================ */
+   ================================================================ */
 
 @media screen and (min-width: 1200px) {
     .container {
         max-width: 1400px;
         padding: 0 3rem;
     }
-    
-    /* Header spacing per desktop large */
+
     .nav-container {
         padding: 0 3rem;
     }
-    
+
+    .social-icons a {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+
+    .social-icons {
+        gap: 2.5rem;
+    }
+
     .hero {
         padding: 150px 3rem 100px;
     }
-    
-    /* Video Hero Desktop Large */
+
     .hero-video {
         object-position: center 28%;
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 100%);
     }
-    
+
     .hero-title {
         font-size: clamp(4.2rem, 2.5vw, 4.8rem);
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1.7rem, 1.2vw, 1.9rem);
     }
-    
+
     .main-content {
         padding: 120px 0 100px;
     }
-    
+
     .content-section {
         margin-bottom: 120px;
         gap: 5rem;
     }
-    
+
     .image-container {
         flex: 0 0 50%;
     }
-    
-    .content-title {
+
+    .content-title,
+    .section-title,
+    .about-text h3 {
+        font-family: 'Nunito', sans-serif;
         font-size: clamp(2.8rem, 2vw, 3.2rem);
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1.2;
     }
-    
-    .itineraries {
-        padding: 140px 0;
+
+    .gallery-info h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(2.8rem, 2vw, 3.2rem);
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
     }
-    
-    .itineraries-grid {
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-        gap: 3rem;
-    }
-    
-    .form-content {
-        max-width: 650px;
-        padding: 3.5rem;
-    }
-    
-    /* Content Showcase Desktop Large */
-    .content-showcase {
-        padding: 8rem 0;
-        min-height: 800px;
-        gap: 4rem;
-    }
-    
-    .content-showcase__text {
-        padding: 5rem 4rem;
-    }
-    
-    .content-showcase__title {
-        font-size: clamp(3rem, 1.8vw, 3.5rem);
-    }
-    
-    .content-showcase__description {
+
+    .content-description,
+    .section-subtitle,
+    .about-text p,
+    .leo-description,
+    .leo-feature-item p,
+    .gallery-info p,
+    .stat-label,
+    .feature-list li,
+    .gallery-tab {
+        font-family: 'Nunito', sans-serif;
         font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.7;
     }
-    
-    .content-showcase__cta {
-        padding: 1.2rem 3.5rem;
-        font-size: 1rem;
-    }
-    
-    .content-showcase__image {
-        min-height: 700px;
+
+    .gallery-info p {
+        color: white;
     }
 }
 
-/* ================================================================================================================================================================================================
+/* ================================================================
    9. DESKTOP ULTRA WIDE (1600px+)
-   ================================================================================================================================================================================================ */
+   ================================================================ */
 
 @media screen and (min-width: 1600px) {
-    /* Video Hero Desktop Ultra Wide */
     .hero-video {
         object-position: center 25%;
     }
-    
+
     .container {
         max-width: 1600px;
         padding: 0 4rem;
     }
-    
-    /* Header spacing per ultra wide */
+
     .nav-container {
         padding: 0 4rem;
     }
-    
+
     .content-section {
         gap: 6rem;
     }
-    
-    .itineraries-grid {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 3.5rem;
-    }
-    
-    /* Content Showcase Ultra Wide */
-    .content-showcase {
-        gap: 5rem;
-        min-height: 900px;
-    }
-    
-    .content-showcase__text {
-        padding: 6rem 5rem;
-    }
-    
-    .content-showcase__title {
-        font-size: clamp(3.2rem, 1.5vw, 3.8rem);
-    }
-    
-    .content-showcase__image {
-        min-height: 800px;
-    }
 }
 
-/* ================================================================================================================================================================================================
+/* ================================================================
    10. PERFORMANCE E ACCESSIBILITÀ
-   ================================================================================================================================================================================================ */
+   ================================================================ */
 
 /* High DPI displays */
 @media screen and (min-resolution: 192dpi),
        screen and (min-resolution: 2dppx) {
     .hero-video,
-    .itinerary-image,
-    .logo,
-    .content-showcase__image video {
+    .logo {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
     }
@@ -1659,63 +918,38 @@
         min-height: 100vh;
         padding: 80px 1rem 40px;
     }
-    
+
     .hero-video {
         min-height: 100vh;
         object-fit: cover;
         object-position: center center;
     }
-    
+
     .hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 100%);
     }
-    
+
     .hero-content {
         text-align: left;
         max-width: 50%;
     }
-    
+
     .hero-title {
         font-size: clamp(2rem, 5vw, 2.8rem);
         margin-bottom: 1rem;
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1rem, 3vw, 1.3rem);
         margin-bottom: 1.5rem;
     }
-    
+
     .main-content {
         padding: 60px 0 40px;
     }
-    
+
     .content-section {
         margin-bottom: 50px;
-    }
-    
-    /* Content Showcase Landscape */
-    .content-showcase {
-        padding: 2rem 0;
-        min-height: 400px;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-    
-    .content-showcase__text {
-        padding: 1.5rem 1rem;
-    }
-    
-    .content-showcase__title {
-        font-size: 1.8rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .content-showcase__description {
-        display: none;
-    }
-    
-    .content-showcase__image {
-        min-height: 300px;
     }
 }
 
@@ -1729,136 +963,43 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    
+
     .hero-content {
         animation: none;
     }
-    
+
     .content-section {
         transform: none !important;
         opacity: 1 !important;
     }
-    
-    .itinerary-card:hover,
+
     .hero-cta:hover {
         transform: none !important;
-    }
-    
-    /* Content Showcase Reduced Motion */
-    .content-showcase__title,
-    .content-showcase__description,
-    .content-showcase__cta,
-    .content-showcase__text,
-    .content-showcase__image {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
-    
-    .content-showcase__image video {
-        transition: none !important;
     }
 }
 
 /* Print styles */
 @media print {
     .header,
-    .mobile-menu-btn,
     .dropdown,
-    .content-showcase,
-    .form-section {
+    .footer-social {
         display: none !important;
     }
-    
+
     .hero {
         background: #000 !important;
         padding: 2rem !important;
         page-break-after: always;
     }
-    
+
     .hero-video-container,
     .hero-video,
     .hero-overlay {
         display: none !important;
     }
-    
+
     .hero-content {
         position: relative !important;
         z-index: 10 !important;
     }
-    
-    .itineraries-grid {
-        display: block !important;
-    }
-    
-    .itinerary-card {
-        break-inside: avoid;
-        margin-bottom: 2rem;
-    }
 }
-
-/* ================================================================================================================================================================================================
-   11. IE SPECIFIC FALLBACKS (MANTENUTO ORIGINALE)
-   ================================================================================================================================================================================================ */
-
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-    /* IE non supporta video moderno, mostra fallback */
-    .hero-video {
-        display: none !important;
-    }
-    
-    .hero {
-        background: linear-gradient(120deg, #8e5edc 0%, #408daa 50%, #02be65 100%) !important;
-    }
-    
-    .content-section {
-        display: block;
-        text-align: center;
-    }
-
-    .content-section>div {
-        display: block;
-        width: 100%;
-        margin: 0 auto;
-    }
-    
-    .content-showcase {
-        display: block;
-    }
-    
-    .content-showcase__text,
-    .content-showcase__image {
-        display: block;
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-}
-
-/* ================================================================================================================================================================================================
-   12. UTILITY CLASSES (MANTENUTO ORIGINALE)
-   ================================================================================================================================================================================================ */
-
-.text-center {
-    text-align: center;
-}
-
-.mb-2 {
-    margin-bottom: 1rem;
-}
-
-.mb-3 {
-    margin-bottom: 1.5rem;
-}
-
-.mb-4 {
-    margin-bottom: 2rem;
-}
-
-.mt-4 {
-    margin-top: 2rem;
-}
-
-/* ================================================================
-   FINE MEDIA QUERIES OTTIMIZZATE
-   ================================================================ */
