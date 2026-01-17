@@ -5,6 +5,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { useLanguage } from './context/LanguageContext';
+import { useContentProtection } from './hooks/useContentProtection';
 
 // ============================================
 // COMPONENTS
@@ -272,6 +273,9 @@ export default function App() {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const { t, currentLang } = useLanguage();
+
+  // Attiva protezione contenuti (no click destro, no copia, no selezione)
+  useContentProtection();
 
   // Swipe handlers for mobile carousel
   const minSwipeDistance = 50;
