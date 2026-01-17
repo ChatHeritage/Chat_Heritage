@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply antialiased;
+    background-color: #f8f7f4;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-violet-500 to-pink-500 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-violet-600 to-pink-600;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/70 border border-white/20 rounded-3xl shadow-xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 via-pink-500 to-orange-500 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-violet-600 via-purple-600 to-pink-600 
+           hover:from-violet-700 hover:via-purple-700 hover:to-pink-700 
+           text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50
+           px-6 py-3 rounded-full font-semibold
+           transform hover:scale-105 active:scale-95
+           transition-all duration-300 ease-out;
+  }
+  
+  .btn-whatsapp {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600 
+           hover:from-green-600 hover:to-emerald-700 
+           text-white shadow-lg shadow-green-500/30 hover:shadow-green-500/50
+           px-6 py-3 rounded-full font-semibold
+           transform hover:scale-105 active:scale-95
+           transition-all duration-300 ease-out;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+/* WhatsApp chat bubble pattern */
+.whatsapp-bg {
+  background-color: #ECE5DD;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4cfc4' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
