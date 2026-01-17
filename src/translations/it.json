@@ -54,14 +54,14 @@
     "card2Title": "Interazione Reale",
     "card2Desc": "Scelte di percorso, quiz e domande a Leo. La guida-chat Whatsapp è in formato testuale e audio.",
     "card3Title": "Contenuti Autentici",
-    "card3Desc": "Storie ricercate da esperti, ricostruzioni fedeli, narrazioni coninvolgenti."
+    "card3Desc": "Storie ricercate da esperti, ricostruzioni fedeli, narrazioni coinvolgenti."
   },
   "howItWorks": {
     "title": "Inizia in",
     "titleHighlight": "4 semplici passi",
     "step1Title": "clicca il tasto verde",
     "step2Title": "si apre Whatsapp",
-    "step3Title": "starta la chat",
+    "step3Title": "avvia la chat",
     "step4Title": "inizia l'avventura!"
   },
   "tours": {
@@ -162,7 +162,7 @@
     "timeline2Title": "Nasce Leo",
     "timeline2Desc": "Sviluppiamo Leo, il leone di San Marco virtuale che diventa la voce di Chat Heritage. Un compagno di viaggio simpatico, colto e sempre disponibile.",
     "timeline3Year": "2025",
-    "timeline3Title": "Primo Itenario pilota",
+    "timeline3Title": "Primo Itinerario pilota",
     "timeline3Desc": "Lanciamo il primo percorso: da Rialto a San Marco, con 6 tappe e oltre 80 aneddoti tra misteri, leggende e curiosità storiche.",
     "timeline4Year": "2026",
     "timeline4Title": "Espansione",
